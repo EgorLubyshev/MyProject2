@@ -46,8 +46,11 @@ public class MainActivity extends AppCompatActivity {
         a3=findViewById(R.id.answer3);
         a4=findViewById(R.id.answer4);
 
-        TextLoader textLoader = new TextLoader(textView, 7);
-        textLoader.execute("http://10.67.172.157/EgorLubyshev/");
+        TextLoad(textView, 1);
+        TextLoad(c1, 2);
+        TextLoad(c2, 3);
+        TextLoad(c3, 4);
+        TextLoad(c4, 5);
 
         display = getWindowManager().getDefaultDisplay();
         size = new Point();
@@ -159,15 +162,17 @@ public class MainActivity extends AppCompatActivity {
     }
     void check() {
         if (a1.getText().equals("print") && a2.getText().equals("  (") &&
-                a3.getText().equals("Hello world!") && a4.getText().equals("  )")) {
+                a3.getText().equals(c4.getText()) && a4.getText().equals("  )")) {
             Toast.makeText(this, "все верно!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplicationContext(), lv2.class);
             startActivity(intent);
         } else {
             Toast.makeText(this, "Ошибка!", Toast.LENGTH_SHORT).show();
         }
-
-
-
+    }
+    void TextLoad(TextView text, int id ){
+        TextLoader textLoader = new TextLoader(text, id);
+        textLoader.execute("http://192.168.100.5/EgorLubyshev/");
+        //textLoader.execute("http://10.67.172.157/EgorLubyshev/");
     }
 }

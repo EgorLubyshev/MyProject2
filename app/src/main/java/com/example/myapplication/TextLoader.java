@@ -59,7 +59,7 @@ class TextLoader extends AsyncTask<String, Integer, Answer> {
 
     interface UserServers {
 
-        @GET("get_user.php")
+        @GET("get_users.php")
         Call<Answer> getUsers(
                 @Query("id") int id
         );
@@ -82,7 +82,7 @@ class Answer {
     String getUsers() {
         String res = "";
         for (User user : data) {
-            res += user.toString() + "\n";
+            res += user.toString() ;
 
         }
         return res;
@@ -91,12 +91,10 @@ class Answer {
 
 class User {
     int id;
-    String login, password, mail;
+    String text;
 
     @NonNull
     @Override
-    public String toString() {
-        return id + ", " + login + ", " + password + ", " + mail;
-    }
+    public String toString() { return text; }
 }
 
