@@ -30,12 +30,16 @@ import retrofit2.http.Query;
 public class MainActivity extends AppCompatActivity {
 
     public TextView c1, c2, c3, c4, a1, a2, a3, a4, textView, check;
+    boolean t=true;
     Display display;
     Point size;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent intent = new Intent(getApplicationContext(), lv2.class);
+        startActivity(intent);
 
         textView=findViewById(R.id.text_view1);
         check=findViewById(R.id.check);
@@ -129,19 +133,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void RandomLoad() {
-        TextLoad(textView, 1);
-        TextLoad(check, 6);
-        textView.setText(String.valueOf(  (int) (Math.random()*5)+1 ));
-        Integer[] a = new Integer[4];
-        for (int i = 0; i < a.length; i++) {
+        if (t){
+            TextLoad(textView, 1);
+            TextLoad(check, 6);
+            textView.setText(String.valueOf(  (int) (Math.random()*5)+1 ));
+            Integer[] a = new Integer[4];
+            for (int i = 0; i < a.length; i++) {
                 a[i] = i+2;
+            }
+            Collections.shuffle(Arrays.asList(a));
+            TextLoad(c1, a[0]);
+            TextLoad(c2, a[1]);
+            TextLoad(c3, a[2]);
+            TextLoad(c4, a[3]);
+            if (c1.getText().equals("print") || 1==1){
+                String st = (String) c1.getText();
+                c1.setText(c2.getText());
+                c2.setText(st);
+                textView.setText("fedfdf");
+            }
+            t=false;
         }
-        Collections.shuffle(Arrays.asList(a));
-        TextLoad(c1, a[0]);
-        TextLoad(c2, a[1]);
-        TextLoad(c3, a[2]);
-        TextLoad(c4, a[3]);
-
     }
 
     void c(TextView c){
