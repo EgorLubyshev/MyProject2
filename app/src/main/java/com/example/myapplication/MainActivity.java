@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.Point;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.TextView;
@@ -46,11 +47,7 @@ public class MainActivity extends AppCompatActivity {
         a3=findViewById(R.id.answer3);
         a4=findViewById(R.id.answer4);
 
-        TextLoad(textView, 1);
-        TextLoad(c1, 2);
-        TextLoad(c2, 3);
-        TextLoad(c3, 4);
-        TextLoad(c4, 5);
+        RandomLoad();
 
         display = getWindowManager().getDefaultDisplay();
         size = new Point();
@@ -62,6 +59,12 @@ public class MainActivity extends AppCompatActivity {
         a2.setWidth(width/4);
         a3.setWidth(width/4);
         a4.setWidth(width/4);
+
+        c1.setWidth(width/4);
+        c2.setWidth(width/4);
+        c3.setWidth(width/4);
+        c4.setWidth(width/4);
+
 
         c1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,6 +124,29 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    void RandomLoad() {
+       // TextLoad(textView, 1);
+        TextLoad(check, 6);
+        textView.setText(String.valueOf(  (int) (Math.random()*5)+1 ));
+        while (true){
+
+            int[] a =  new int[4];
+            for (int i=0; i<4; i++){
+                a[i] = (int) (Math.random()*5)+1;
+
+            }
+
+            textView.setText(String.valueOf(a[0]) + String.valueOf(a[1]) + String.valueOf(a[2]) +String.valueOf(a[3]));
+            break;
+        }
+        TextLoad(c1, 2);
+        TextLoad(c2, 3);
+        TextLoad(c3, 4);
+        TextLoad(c4, 5);
+
+    }
+
     void c(TextView c){
         if (a1.getText().equals("")){
             a1.setText(c.getText());
@@ -161,8 +187,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     void check() {
-        if (a1.getText().equals("print") && a2.getText().equals("  (") &&
-                a3.getText().equals(c4.getText()) && a4.getText().equals("  )")) {
+        if (a1.getText().equals("print") && a2.getText().equals("(") &&
+                a3.getText().equals("\"Hello World\"") && a4.getText().equals(")")) {
             Toast.makeText(this, "все верно!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplicationContext(), lv2.class);
             startActivity(intent);

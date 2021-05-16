@@ -108,9 +108,10 @@
             android:id="@+id/c1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:gravity="center"
             android:text="a+=i"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            />
 
 
 
@@ -119,10 +120,11 @@
             android:id="@+id/c2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:gravity="center"
             android:layout_below="@+id/c1"
             android:text="print(a)"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            />
 
 
 
@@ -130,10 +132,11 @@
             android:id="@+id/c3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:gravity="center"
             android:layout_below="@+id/c2"
             android:text="a=3"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            />
 
 
 
@@ -144,10 +147,11 @@
             android:id="@+id/c4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:gravity="center"
             android:layout_below="@+id/c3"
             android:text="for i in range(1,4):"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            />
 
 
 

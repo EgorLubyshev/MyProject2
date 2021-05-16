@@ -50,6 +50,15 @@ public class lv3 extends AppCompatActivity {
         a4.setWidth(width / 3);
 
 
+        c1.setWidth(width/3);
+        c2.setWidth(width/3);
+        c3.setWidth(width/3);
+        c4.setWidth(width/3);
+        c1.setHeight(height/12);
+        c2.setHeight(height/12);
+        c3.setHeight(height/12);
+        c4.setHeight(height/12);
+
 
         c1.setOnClickListener(new View.OnClickListener() {
             @Override
