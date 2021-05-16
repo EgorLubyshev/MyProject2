@@ -155,7 +155,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_below="@+id/c3"
-            android:text="Hello world!"
+            android:text="Hello World!"
             android:textColor="@color/white"
 
            />

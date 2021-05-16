@@ -185,7 +185,8 @@ public class MainActivity extends AppCompatActivity {
     }
     void check() {
         if (a1.getText().equals("print") && a2.getText().equals("(") &&
-                a3.getText().equals("\"Hello World!\"") && a4.getText().equals(")")) {
+                (a3.getText().equals("\"Hello World!\"")) || (a3.getText().equals("Hello World!"))
+                && a4.getText().equals(")")) {
             Toast.makeText(this, "все верно!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplicationContext(), lv2.class);
             startActivity(intent);
