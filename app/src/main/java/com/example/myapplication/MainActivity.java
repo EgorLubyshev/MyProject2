@@ -16,6 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Random;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -126,24 +129,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void RandomLoad() {
-       // TextLoad(textView, 1);
+        TextLoad(textView, 1);
         TextLoad(check, 6);
         textView.setText(String.valueOf(  (int) (Math.random()*5)+1 ));
-        while (true){
-
-            int[] a =  new int[4];
-            for (int i=0; i<4; i++){
-                a[i] = (int) (Math.random()*5)+1;
-
-            }
-
-            textView.setText(String.valueOf(a[0]) + String.valueOf(a[1]) + String.valueOf(a[2]) +String.valueOf(a[3]));
-            break;
+        Integer[] a = new Integer[4];
+        for (int i = 0; i < a.length; i++) {
+                a[i] = i+2;
         }
-        TextLoad(c1, 2);
-        TextLoad(c2, 3);
-        TextLoad(c3, 4);
-        TextLoad(c4, 5);
+        Collections.shuffle(Arrays.asList(a));
+        TextLoad(c1, a[0]);
+        TextLoad(c2, a[1]);
+        TextLoad(c3, a[2]);
+        TextLoad(c4, a[3]);
 
     }
 
@@ -188,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
     }
     void check() {
         if (a1.getText().equals("print") && a2.getText().equals("(") &&
-                a3.getText().equals("\"Hello World\"") && a4.getText().equals(")")) {
+                a3.getText().equals("\"Hello World!\"") && a4.getText().equals(")")) {
             Toast.makeText(this, "все верно!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplicationContext(), lv2.class);
             startActivity(intent);
