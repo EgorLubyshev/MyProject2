@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class lv5 extends AppCompatActivity {
+public class lv6 extends AppCompatActivity {
 
     public TextView c1, c2, c3, c4, a1, a2, a3, a4, textView, check;
     Display display;
@@ -174,10 +174,10 @@ public class lv5 extends AppCompatActivity {
         }
     }
     void check(){
-        if (a1.getText().equals("for i in range(1,7,2):") && a2.getText().equals("a=17") &&
-                a3.getText().equals("a+=i") && a4.getText().equals("print(a)")){
+        if (a1.getText().equals("for i in range(7,21,3):") && a2.getText().equals("a+=i") &&
+                a3.getText().equals("a=19") && a4.getText().equals("print(a)")){
             Toast.makeText(this, "все верно!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(getApplicationContext(), lv6.class);
+            Intent intent = new Intent(getApplicationContext(), lv1_s.class);
             startActivity(intent);
         }else {
             Toast.makeText(this, "Ошибка!", Toast.LENGTH_SHORT).show();

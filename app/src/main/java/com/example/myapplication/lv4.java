@@ -177,7 +177,7 @@ public class lv4 extends AppCompatActivity {
         if (a1.getText().equals("a=12") && a2.getText().equals("for i in range(3,21,3):") &&
                 a3.getText().equals("a+=1") && a4.getText().equals("print(a)")){
             Toast.makeText(this, "все верно!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(getApplicationContext(), lv2.class);
+            Intent intent = new Intent(getApplicationContext(), lv5.class);
             startActivity(intent);
         }else {
             Toast.makeText(this, "Ошибка!", Toast.LENGTH_SHORT).show();
