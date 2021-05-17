@@ -18,10 +18,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Hello World!"
-            android:textColor="#FFFFFF"
+            android:text="18"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:textColor="#FFFFFF"
             />
     </RelativeLayout>
 
@@ -48,7 +48,7 @@
             android:id="@+id/answer2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/answer1"
+            android:layout_below="@+id/answer1"
             android:background="@drawable/ramka"
             android:gravity="center"
             android:foregroundGravity="right"
@@ -59,7 +59,7 @@
         <TextView
             android:id="@+id/answer3"
             android:layout_width="wrap_content"
-            android:layout_toRightOf="@+id/answer2"
+            android:layout_below="@+id/answer2"
             android:layout_height="wrap_content"
             android:background="@drawable/ramka"
             android:gravity="center"
@@ -72,7 +72,7 @@
         <TextView
             android:id="@+id/answer4"
             android:layout_width="wrap_content"
-            android:layout_toRightOf="@+id/answer3"
+            android:layout_below="@+id/answer3"
             android:layout_height="wrap_content"
             android:background="@drawable/ramka"
             android:gravity="center"
@@ -97,7 +97,7 @@
 
 
     </RelativeLayout>
-    w<RelativeLayout
+    <RelativeLayout
         android:orientation="vertical"
         android:background="@color/black"
         android:layout_width="match_parent"
@@ -109,9 +109,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="print"
+            android:text="a+=1"
             android:textColor="@color/white"
-            
             />
 
 
@@ -123,11 +122,9 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_below="@+id/c1"
-            android:text="("
-
-
+            android:text="print(a)"
             android:textColor="@color/white"
-           />
+            />
 
 
 
@@ -137,10 +134,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_below="@+id/c2"
-            android:text=")"
-
-
-
+            android:text="a=12"
             android:textColor="@color/white"
             />
 
@@ -155,10 +149,9 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_below="@+id/c3"
-            android:text="Hello World!"
+            android:text="for i in range(3,21,3):"
             android:textColor="@color/white"
-
-           />
+            />
 
 
 

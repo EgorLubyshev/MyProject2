@@ -3,42 +3,26 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Point;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Random;
 
-import retrofit2.Call;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.GET;
-import retrofit2.http.Query;
+public class lv4 extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity {
-
-    public TextView c1, c2, c3, c4, a1, a2, a3, a4, textView, textView2 ,check;
+    public TextView c1, c2, c3, c4, a1, a2, a3, a4, textView, check;
     Display display;
     Point size;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        Intent intent = new Intent(getApplicationContext(), lv3.class);
-        startActivity(intent);
+        setContentView(R.layout.lv3);
 
         textView=findViewById(R.id.text_view1);
         check=findViewById(R.id.check);
@@ -53,23 +37,22 @@ public class MainActivity extends AppCompatActivity {
         a3=findViewById(R.id.answer3);
         a4=findViewById(R.id.answer4);
 
-        RandomLoad();
-
         display = getWindowManager().getDefaultDisplay();
         size = new Point();
         display.getSize(size);
         int width = size.x;
         int height = size.y;
 
-        a1.setWidth(width/4);
-        a2.setWidth(width/4);
-        a3.setWidth(width/4);
-        a4.setWidth(width/4);
+        a1.setHeight(height/12);
+        a2.setHeight(height/12);
+        a3.setHeight(height/12);
+        a4.setHeight(height/12);
+        a1.setWidth(width / 3);
+        a2.setWidth(width / 3);
+        a3.setWidth(width / 3);
+        a4.setWidth(width / 3);
 
-        c1.setWidth(width/4);
-        c2.setWidth(width/4);
-        c3.setWidth(width/4);
-        c4.setWidth(width/4);
+        RandomLoad();
 
         c1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         c3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               c(c3);
+                c(c3);
             }
         });
         c4.setOnClickListener(new View.OnClickListener() {
@@ -131,18 +114,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void RandomLoad() {
-            TextLoad(textView, 1);
-            TextLoad(check, 6);
-            textView.setText(String.valueOf(  (int) (Math.random()*5)+1 ));
-            Integer[] a = new Integer[4];
-            for (int i = 0; i < a.length; i++) {
-                a[i] = i+2;
-            }
-            Collections.shuffle(Arrays.asList(a));
-            TextLoad(c1, a[0]);
-            TextLoad(c2, a[1]);
-            TextLoad(c3, a[2]);
-            TextLoad(c4, a[3]);
+        TextLoad(textView, 11);
+        TextLoad(check, 6);
+        textView.setText(String.valueOf(  (int) (Math.random()*5)+1 ));
+        Integer[] a = new Integer[4];
+        for (int i = 0; i < a.length; i++) {
+            a[i] = i+12;
+        }
+        Collections.shuffle(Arrays.asList(a));
+        TextLoad(c1, a[0]);
+        TextLoad(c2, a[1]);
+        TextLoad(c3, a[2]);
+        TextLoad(c4, a[3]);
+    }
+
+    void TextLoad(TextView text, int id ){
+        TextLoader textLoader = new TextLoader(text, id);
+        textLoader.execute("http://192.168.100.5/EgorLubyshev/");
+        //textLoader.execute("http://10.67.172.157/EgorLubyshev/");
     }
 
     void c(TextView c){
@@ -184,20 +173,14 @@ public class MainActivity extends AppCompatActivity {
             answer.setText("");
         }
     }
-    void check() {
-        if (a1.getText().equals("print") && a2.getText().equals("(") &&
-                (a3.getText().equals("\"Hello World!\"")) || (a3.getText().equals("Hello World!"))
-                && a4.getText().equals(")")) {
+    void check(){
+        if (a1.getText().equals("a=12") && a2.getText().equals("for i in range(3,21,3):") &&
+                a3.getText().equals("a+=1") && a4.getText().equals("print(a)")){
             Toast.makeText(this, "все верно!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplicationContext(), lv2.class);
             startActivity(intent);
-        } else {
+        }else {
             Toast.makeText(this, "Ошибка!", Toast.LENGTH_SHORT).show();
         }
-    }
-    void TextLoad(TextView text, int id ){
-        TextLoader textLoader = new TextLoader(text, id);
-        textLoader.execute("http://192.168.100.5/EgorLubyshev/");
-        //textLoader.execute("http://10.67.172.157/EgorLubyshev/");
     }
 }
