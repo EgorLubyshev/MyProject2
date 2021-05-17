@@ -114,12 +114,12 @@ public class lv6 extends AppCompatActivity {
     }
 
     void RandomLoad() {
-        TextLoad(textView, 11);
+        TextLoad(textView, 30);
         TextLoad(check, 6);
         textView.setText(String.valueOf(  (int) (Math.random()*5)+1 ));
         Integer[] a = new Integer[4];
         for (int i = 0; i < a.length; i++) {
-            a[i] = i+12;
+            a[i] = i+26;
         }
         Collections.shuffle(Arrays.asList(a));
         TextLoad(c1, a[0]);
