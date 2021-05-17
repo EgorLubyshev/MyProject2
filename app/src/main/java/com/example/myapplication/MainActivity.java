@@ -30,7 +30,6 @@ import retrofit2.http.Query;
 public class MainActivity extends AppCompatActivity {
 
     public TextView c1, c2, c3, c4, a1, a2, a3, a4, textView, check;
-    boolean t=true;
     Display display;
     Point size;
     @Override
@@ -38,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(getApplicationContext(), lv2.class);
+        Intent intent = new Intent(getApplicationContext(), lv3.class);
         startActivity(intent);
 
         textView=findViewById(R.id.text_view1);
@@ -133,7 +132,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void RandomLoad() {
-        if (t){
             TextLoad(textView, 1);
             TextLoad(check, 6);
             textView.setText(String.valueOf(  (int) (Math.random()*5)+1 ));
@@ -146,14 +144,6 @@ public class MainActivity extends AppCompatActivity {
             TextLoad(c2, a[1]);
             TextLoad(c3, a[2]);
             TextLoad(c4, a[3]);
-            if (c1.getText().equals("print") || 1==1){
-                String st = (String) c1.getText();
-                c1.setText(c2.getText());
-                c2.setText(st);
-                textView.setText("fedfdf");
-            }
-            t=false;
-        }
     }
 
     void c(TextView c){
