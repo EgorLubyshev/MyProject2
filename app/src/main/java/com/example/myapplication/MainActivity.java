@@ -29,7 +29,7 @@ import retrofit2.http.Query;
 
 public class MainActivity extends AppCompatActivity {
 
-    public TextView c1, c2, c3, c4, a1, a2, a3, a4, textView, check;
+    public TextView c1, c2, c3, c4, a1, a2, a3, a4, textView, textView2 ,check;
     Display display;
     Point size;
     @Override
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
         textView=findViewById(R.id.text_view1);
+        textView=findViewById(R.id.text_view2);
         check=findViewById(R.id.check);
 
         c1=findViewById(R.id.c1);
@@ -71,6 +72,13 @@ public class MainActivity extends AppCompatActivity {
         c3.setWidth(width/4);
         c4.setWidth(width/4);
 
+        textView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), lv1_s.class);
+                startActivity(intent);
+            }
+        });
 
         c1.setOnClickListener(new View.OnClickListener() {
             @Override
