@@ -16,12 +16,12 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 class TextLoader extends AsyncTask<String, Integer, Answer> {
-    TextView textView;
      int id;
+     String text;
 
-     TextLoader(TextView textView, int id){
-         this.textView=textView;
+     TextLoader(String text,int id){
          this.id=id;
+         this.text=text;
      }
 
     @Override
@@ -48,9 +48,9 @@ class TextLoader extends AsyncTask<String, Integer, Answer> {
     @Override
     protected void onPostExecute(Answer answer) {
         if (answer != null) {
-            textView.setText(answer.getUsers());
+            text = answer.getUsers();
         } else {
-            textView.setText("Ошибка");
+
         }
 
 
@@ -75,7 +75,7 @@ class TextLoader extends AsyncTask<String, Integer, Answer> {
 
 }
 
-class Answer {
+class       Answer {
     boolean status;
     ArrayList<User> data;
 

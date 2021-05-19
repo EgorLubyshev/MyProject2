@@ -130,8 +130,8 @@ public class lv3 extends AppCompatActivity {
 
     void TextLoad(TextView text, int id ){
         TextLoader textLoader = new TextLoader(text, id);
-        textLoader.execute("http://192.168.100.5/EgorLubyshev/");
-        //textLoader.execute("http://10.67.172.157/EgorLubyshev/");
+        //textLoader.execute("http://192.168.100.5/EgorLubyshev/");
+        textLoader.execute("http://10.67.172.157/EgorLubyshev/");
     }
 
     void c(TextView c){

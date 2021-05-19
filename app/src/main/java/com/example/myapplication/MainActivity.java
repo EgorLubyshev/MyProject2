@@ -32,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
     public TextView c1, c2, c3, c4, a1, a2, a3, a4, textView, textView2 ,check;
     Display display;
     Point size;
+    String text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.lv1);
 
-        Intent intent = new Intent(getApplicationContext(), lv3.class);
-        startActivity(intent);
+
 
         textView=findViewById(R.id.text_view1);
         check=findViewById(R.id.check);
@@ -131,18 +131,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void RandomLoad() {
-            TextLoad(textView, 1);
-            TextLoad(check, 6);
-            textView.setText(String.valueOf(  (int) (Math.random()*5)+1 ));
-            Integer[] a = new Integer[4];
-            for (int i = 0; i < a.length; i++) {
-                a[i] = i+2;
-            }
+            TextLoad(text, 1);
+            String[] a = text.split(" ");
             Collections.shuffle(Arrays.asList(a));
-            TextLoad(c1, a[0]);
-            TextLoad(c2, a[1]);
-            TextLoad(c3, a[2]);
-            TextLoad(c4, a[3]);
+            textView.setText(a[0]);
+            c1.setText(a[1]);
+            c2.setText(a[2]);
+            c3.setText(a[4]);
     }
 
     void c(TextView c){
@@ -191,13 +186,15 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "все верно!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplicationContext(), lv2.class);
             startActivity(intent);
+            finish();
         } else {
             Toast.makeText(this, "Ошибка!", Toast.LENGTH_SHORT).show();
         }
     }
-    void TextLoad(TextView text, int id ){
+    void TextLoad(String text, int id ){
         TextLoader textLoader = new TextLoader(text, id);
-        textLoader.execute("http://192.168.100.5/EgorLubyshev/");
-        //textLoader.execute("http://10.67.172.157/EgorLubyshev/");
+        //textLoader.execute("http://192.168.100.5/EgorLubyshev/");
+        textLoader.execute("http://10.67.172.157/EgorLubyshev/");
+
     }
 }
