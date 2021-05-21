@@ -48,7 +48,7 @@ public class lv2 extends AppCompatActivity {
         a3.setWidth(width / 3);
 
 
-        RandomLoad();
+
 
         c1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,19 +95,7 @@ public class lv2 extends AppCompatActivity {
 
     }
 
-    void RandomLoad() {
-        TextLoad(textView, 7);
-        TextLoad(check, 6);
-        textView.setText(String.valueOf(  (int) (Math.random()*5)+1 ));
-        Integer[] a = new Integer[3];
-        for (int i = 0; i < a.length; i++) {
-            a[i] = i+8;
-        }
-        Collections.shuffle(Arrays.asList(a));
-        TextLoad(c1, a[0]);
-        TextLoad(c2, a[1]);
-        TextLoad(c3, a[2]);
-    }
+
 
     void c(TextView c) {
         if (a1.getText().equals("")) {
@@ -154,9 +142,5 @@ public class lv2 extends AppCompatActivity {
         }
     }
 
-    void TextLoad(TextView text, int id ){
-        TextLoader textLoader = new TextLoader(text, id);
-        //textLoader.execute("http://192.168.100.5/EgorLubyshev/");
-        textLoader.execute("http://10.67.172.157/EgorLubyshev/");
-    }
+
 }

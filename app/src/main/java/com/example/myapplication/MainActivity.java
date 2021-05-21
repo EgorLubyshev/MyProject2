@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     Display display;
     Point size;
     String text;
+    ArrayList<Task> tasks = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         a3=findViewById(R.id.answer3);
         a4=findViewById(R.id.answer4);
 
-        RandomLoad();
+
 
         display = getWindowManager().getDefaultDisplay();
         size = new Point();
@@ -70,6 +71,17 @@ public class MainActivity extends AppCompatActivity {
         c2.setWidth(width/4);
         c3.setWidth(width/4);
         c4.setWidth(width/4);
+
+        TasksLoader tasksLoader = new TasksLoader();
+        tasksLoader.setOnPostExecute(new TasksLoader.OnPostExecute() {
+            @Override
+            public void doOnPostExecute(TaskAnswer answer) {
+                tasks = answer.data;
+                setTask(tasks.get(0));
+            }
+        });
+
+        tasksLoader.execute("http://10.148.190.161");
 
         c1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,14 +142,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    void RandomLoad() {
-            TextLoad(text, 1);
-            String[] a = text.split(" ");
-            Collections.shuffle(Arrays.asList(a));
-            textView.setText(a[0]);
-            c1.setText(a[1]);
-            c2.setText(a[2]);
-            c3.setText(a[4]);
+    void setTask(Task task){
+        c1.setText(task.variants.get(0));
+        c2.setText(task.variants.get(1));
+        c3.setText(task.variants.get(2));
+        c4.setText(task.variants.get(3));
+        textView.setText(task.text);
+        if (task.type==1){
+            setContentView(R.layout.activity_main);
+        }
+        if (task.type==2){
+            setContentView(R.layout.activity_main);
+        }
     }
 
     void c(TextView c){
@@ -191,10 +207,5 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Ошибка!", Toast.LENGTH_SHORT).show();
         }
     }
-    void TextLoad(String text, int id ){
-        TextLoader textLoader = new TextLoader(text, id);
-        //textLoader.execute("http://192.168.100.5/EgorLubyshev/");
-        textLoader.execute("http://10.67.172.157/EgorLubyshev/");
 
-    }
 }
