@@ -143,10 +143,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void setTask(Task task){
-        c1.setText(task.variants.get(0));
-        c2.setText(task.variants.get(1));
-        c3.setText(task.variants.get(2));
-        c4.setText(task.variants.get(3));
+        ArrayList<String> arrayList = task.variants;
+        Collections.shuffle(arrayList);
+        c1.setText(arrayList.get(0));
+        c2.setText(arrayList.get(1));
+        c3.setText(arrayList.get(2));
+        c4.setText(arrayList.get(3));
         textView.setText(task.text);
         if (task.type==1){
             setContentView(R.layout.activity_main);
