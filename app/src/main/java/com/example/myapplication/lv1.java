@@ -72,6 +72,10 @@ public class lv1 extends AppCompatActivity {
         answer2.setHeight(height/12);
         answer3.setHeight(height/12);
         answer4.setHeight(height/12);
+        answer1.setTextSize(width/40);
+        answer2.setTextSize(width/40);
+        answer3.setTextSize(width/40);
+        answer4.setTextSize(width/40);
 
         variant1.setWidth(width/2);
         variant2.setWidth(width/2);
@@ -81,6 +85,10 @@ public class lv1 extends AppCompatActivity {
         variant2.setHeight(height/12);
         variant3.setHeight(height/12);
         variant4.setHeight(height/12);
+        variant1.setTextSize(width/40);
+        variant2.setTextSize(width/40);
+        variant3.setTextSize(width/40);
+        variant4.setTextSize(width/40);
 
 
         TasksLoader tasksLoader = new TasksLoader();

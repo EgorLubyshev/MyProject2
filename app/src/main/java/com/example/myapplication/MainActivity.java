@@ -29,8 +29,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public class MainActivity extends AppCompatActivity {
-    TextView lv4,lv5,lv6;
-    Button lv1,lv2,lv3;
+    Button lv1,lv2,lv3,lv4,lv5,lv6,lv7,lv8,lv9;
     Display display;
     Point size;
     @Override
@@ -43,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
         lv4=findViewById(R.id.lv4);
         lv5=findViewById(R.id.lv5);
         lv6=findViewById(R.id.lv6);
+        lv7=findViewById(R.id.lv7);
+        lv8=findViewById(R.id.lv8);
+        lv9=findViewById(R.id.lv9);
 
         display = getWindowManager().getDefaultDisplay();
         size = new Point();
@@ -51,22 +53,40 @@ public class MainActivity extends AppCompatActivity {
         int height = size.y;
 
         lv1.setWidth(width/3);
-        lv1.setHeight(height/9);
+        lv1.setHeight(height/3);
+        lv1.setTextSize(width/25);
 
         lv2.setWidth(width/3);
-        lv2.setHeight(height/9);
+        lv2.setHeight(height/3);
+        lv2.setTextSize(width/25);
 
         lv3.setWidth(width/3);
-        lv3.setHeight(height/9);
+        lv3.setHeight(height/3);
+        lv3.setTextSize(width/25);
 
         lv4.setWidth(width/3);
-        lv4.setHeight(height/9);
+        lv4.setHeight(height/3);
+        lv4.setTextSize(width/25);
 
         lv5.setWidth(width/3);
-        lv5.setHeight(height/9);
+        lv5.setHeight(height/3);
+        lv5.setTextSize(width/25);
 
         lv6.setWidth(width/3);
-        lv6.setHeight(height/9);
+        lv6.setHeight(height/3);
+        lv6.setTextSize(width/25);
+
+        lv7.setWidth(width/3);
+        lv7.setHeight(height/3);
+        lv7.setTextSize(width/25);
+
+        lv8.setWidth(width/3);
+        lv8.setHeight(height/3);
+        lv8.setTextSize(width/25);
+
+        lv9.setWidth(width/3);
+        lv9.setHeight(height/3);
+        lv9.setTextSize(width/25);
 
         lv1.setOnClickListener(new View.OnClickListener() {
             @Override
