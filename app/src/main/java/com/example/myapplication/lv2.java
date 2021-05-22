@@ -71,10 +71,10 @@ public class lv2 extends AppCompatActivity {
         check.setWidth(width/3);
         check.setHeight(height/12);
 
-        answer1.setWidth(width/4);
-        answer2.setWidth(width/4);
-        answer3.setWidth(width/4);
-        answer4.setWidth(width/4);
+        answer1.setWidth(width/2);
+        answer2.setWidth(width/2);
+        answer3.setWidth(width/2);
+        answer4.setWidth(width/2);
         answer1.setHeight(height/12);
         answer2.setHeight(height/12);
         answer3.setHeight(height/12);
@@ -180,6 +180,10 @@ public class lv2 extends AppCompatActivity {
         }
         if (task.type==2){
             setContentView(R.layout.activity_main);
+            answer1.setWidth(size.x/2);
+            answer2.setWidth(size.x/2);
+            answer3.setWidth(size.x/2);
+            answer4.setWidth(size.x/2);
         }
     }
 
