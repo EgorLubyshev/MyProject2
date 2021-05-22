@@ -7,11 +7,43 @@
 
     <RelativeLayout
         android:id="@+id/linear1"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:background="@color/black"
         android:layout_height="0dp"
         android:layout_weight="100">
+    <Button
+        android:id="@+id/lv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="1"
+        android:textSize="250px"
+        android:background="@color/black"
+        />
+    <Button
+        android:id="@+id/lv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_toRightOf="@+id/lv1"
+        android:text="2"
+        android:textSize="250px"
+        android:background="@color/black"
+        />
+    <Button
+        android:id="@+id/lv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_toRightOf="@+id/lv2"
+        android:text="3"
+        android:textSize="250px"
+        android:background="@color/black"
+        />
 
 
     </RelativeLayout>
@@ -22,7 +54,35 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="100">
-
+        <TextView
+            android:id="@+id/lv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="4"
+            android:textSize="250px"
+            />
+        <TextView
+            android:id="@+id/lv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@+id/lv4"
+            android:text="5"
+            android:textSize="250px"
+            />
+        <TextView
+            android:id="@+id/lv6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@+id/lv5"
+            android:text="6"
+            android:textSize="250px"
+            />
 
     </RelativeLayout>
     <RelativeLayout
@@ -31,6 +91,35 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="100">
+        <TextView
+            android:id="@+id/lv7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="7"
+            android:textSize="250px"
+            />
+        <TextView
+            android:id="@+id/lv8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@+id/lv7"
+            android:text="8"
+            android:textSize="250px"
+            />
+        <TextView
+            android:id="@+id/lv9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@+id/lv8"
+            android:text="9"
+            android:textSize="250px"
+            />
     </RelativeLayout>
 
 
