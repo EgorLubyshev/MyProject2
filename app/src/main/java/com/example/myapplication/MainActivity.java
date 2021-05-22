@@ -29,11 +29,13 @@ import retrofit2.http.Query;
 
 public class MainActivity extends AppCompatActivity {
 
-    public TextView c1, c2, c3, c4, a1, a2, a3, a4, textView, textView2 ,check;
+    public TextView variant1, variant2, variant3, variant4,
+            answer1, answer2, answer3, answer4, result,check;
     Display display;
     Point size;
     String text;
     ArrayList<Task> tasks = new ArrayList<>();
+    ArrayList<String> arrOriginal = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,18 +43,18 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        textView=findViewById(R.id.text_view1);
+        result=findViewById(R.id.result);
         check=findViewById(R.id.check);
 
-        c1=findViewById(R.id.c1);
-        c2=findViewById(R.id.c2);
-        c3=findViewById(R.id.c3);
-        c4=findViewById(R.id.c4);
+        variant1=findViewById(R.id.variant1);
+        variant2=findViewById(R.id.variant2);
+        variant3=findViewById(R.id.variant3);
+        variant4=findViewById(R.id.variant4);
 
-        a1=findViewById(R.id.answer1);
-        a2=findViewById(R.id.answer2);
-        a3=findViewById(R.id.answer3);
-        a4=findViewById(R.id.answer4);
+        answer1=findViewById(R.id.answer1);
+        answer2=findViewById(R.id.answer2);
+        answer3=findViewById(R.id.answer3);
+        answer4=findViewById(R.id.answer4);
 
 
 
@@ -62,74 +64,82 @@ public class MainActivity extends AppCompatActivity {
         int width = size.x;
         int height = size.y;
 
-        a1.setWidth(width/4);
-        a2.setWidth(width/4);
-        a3.setWidth(width/4);
-        a4.setWidth(width/4);
+        answer1.setWidth(width/4);
+        answer2.setWidth(width/4);
+        answer3.setWidth(width/4);
+        answer4.setWidth(width/4);
+        answer1.setHeight(height/12);
+        answer2.setHeight(height/12);
+        answer3.setHeight(height/12);
+        answer4.setHeight(height/12);
 
-        c1.setWidth(width/4);
-        c2.setWidth(width/4);
-        c3.setWidth(width/4);
-        c4.setWidth(width/4);
+        variant1.setWidth(width/2);
+        variant2.setWidth(width/2);
+        variant3.setWidth(width/2);
+        variant4.setWidth(width/2);
+        variant1.setHeight(height/12);
+        variant2.setHeight(height/12);
+        variant3.setHeight(height/12);
+        variant4.setHeight(height/12);
+
 
         TasksLoader tasksLoader = new TasksLoader();
         tasksLoader.setOnPostExecute(new TasksLoader.OnPostExecute() {
             @Override
             public void doOnPostExecute(TaskAnswer answer) {
                 tasks = answer.data;
+                arrOriginal=tasks.get(0).variants;
                 setTask(tasks.get(0));
             }
         });
 
         tasksLoader.execute("http://10.148.190.161");
 
-        c1.setOnClickListener(new View.OnClickListener() {
+        variant1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                c(c1);
+                setAnswer(variant1);
             }
         });
-        c2.setOnClickListener(new View.OnClickListener() {
+        variant2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                c(c2);
+                setAnswer(variant2);
             }
         });
-        c3.setOnClickListener(new View.OnClickListener() {
+        variant3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               c(c3);
+               setAnswer(variant3);
             }
         });
-        c4.setOnClickListener(new View.OnClickListener() {
+        variant4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                c(c4);
+                setAnswer(variant4);
             }
         });
 
-        a1.setOnClickListener(new View.OnClickListener() {
+        answer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                ans(a1);
+                setVariant(answer1);
             }
         });
-        a2.setOnClickListener(new View.OnClickListener() {
+        answer2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){ setVariant(answer2); }
+        });
+        answer3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                ans(a2);
+                setVariant(answer3);
             }
         });
-        a3.setOnClickListener(new View.OnClickListener() {
+        answer4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                ans(a3);
-            }
-        });
-        a4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                ans(a4);
+                setVariant(answer4);
             }
         });
 
@@ -145,11 +155,11 @@ public class MainActivity extends AppCompatActivity {
     void setTask(Task task){
         ArrayList<String> arrayList = task.variants;
         Collections.shuffle(arrayList);
-        c1.setText(arrayList.get(0));
-        c2.setText(arrayList.get(1));
-        c3.setText(arrayList.get(2));
-        c4.setText(arrayList.get(3));
-        textView.setText(task.text);
+        variant1.setText(arrayList.get(0));
+        variant2.setText(arrayList.get(1));
+        variant3.setText(arrayList.get(2));
+        variant4.setText(arrayList.get(3));
+        result.setText(task.text);
         if (task.type==1){
             setContentView(R.layout.activity_main);
         }
@@ -158,49 +168,50 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    void c(TextView c){
-        if (a1.getText().equals("")){
-            a1.setText(c.getText());
-            c.setVisibility(View.INVISIBLE);
+    void setAnswer(TextView variant){
+        if (answer1.getText().equals("")){
+            answer1.setText(variant.getText());
+            variant.setVisibility(View.INVISIBLE);
         }else {
-            if(a2.getText().equals("")){
-                a2.setText(c.getText());
-                c.setVisibility(View.INVISIBLE);
+            if(answer2.getText().equals("")){
+                answer2.setText(variant.getText());
+                variant.setVisibility(View.INVISIBLE);
             }else {
-                if (a3.getText().equals("")){
-                    a3.setText(c.getText());
-                    c.setVisibility(View.INVISIBLE);
+                if (answer3.getText().equals("")){
+                    answer3.setText(variant.getText());
+                    variant.setVisibility(View.INVISIBLE);
                 }else {
-                    if(a4.getText().equals("")) {
-                        a4.setText(c.getText());
-                        c.setVisibility(View.INVISIBLE);
+                    if(answer4.getText().equals("")) {
+                        answer4.setText(variant.getText());
+                        variant.setVisibility(View.INVISIBLE);
                     }
                 }
             }
         }
     }
-    void ans( TextView answer){
-        if (answer.getText().equals(c1.getText())){
-            c1.setVisibility(View.VISIBLE);
+    void setVariant( TextView answer){
+        if (answer.getText().equals(variant1.getText())){
+            variant1.setVisibility(View.VISIBLE);
             answer.setText("");
         }
-        if (answer.getText().equals(c2.getText())){
-            c2.setVisibility(View.VISIBLE);
+        if (answer.getText().equals(variant2.getText())){
+            variant2.setVisibility(View.VISIBLE);
             answer.setText("");
         }
-        if (answer.getText().equals(c3.getText())){
-            c3.setVisibility(View.VISIBLE);
+        if (answer.getText().equals(variant3.getText())){
+            variant3.setVisibility(View.VISIBLE);
             answer.setText("");
         }
-        if (answer.getText().equals(c4.getText())){
-            c4.setVisibility(View.VISIBLE);
+        if (answer.getText().equals(variant4.getText())){
+            variant4.setVisibility(View.VISIBLE);
             answer.setText("");
         }
     }
     void check() {
-        if (a1.getText().equals("print") && a2.getText().equals("(") &&
-                (a3.getText().equals("\"Hello World!\"")) || (a3.getText().equals("Hello World!"))
-                && a4.getText().equals(")")) {
+        if (    answer1.getText().equals(arrOriginal.get(0)) &&
+                answer2.getText().equals(arrOriginal.get(1)) &&
+                answer3.getText().equals(arrOriginal.get(2)) &&
+                answer4.getText().equals(arrOriginal.get(3))) {
             Toast.makeText(this, "все верно!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplicationContext(), lv2.class);
             startActivity(intent);
