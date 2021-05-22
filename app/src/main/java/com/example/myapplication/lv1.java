@@ -108,7 +108,7 @@ public class lv1 extends AppCompatActivity {
             }
         });
 
-        tasksLoader.execute("http://10.148.190.161");
+        tasksLoader.execute("http://h152771.s22.test-hf.su");
 
         variant1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -175,12 +175,7 @@ public class lv1 extends AppCompatActivity {
         variant3.setText(arrayList.get(2));
         variant4.setText(arrayList.get(3));
         result.setText(task.text);
-        if (task.type==1){
-            setContentView(R.layout.activity_main);
-        }
-        if (task.type==2){
-            setContentView(R.layout.activity_main);
-        }
+
     }
 
     void setAnswer(TextView variant){
