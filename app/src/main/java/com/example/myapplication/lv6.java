@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.view.Display;
@@ -10,9 +9,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.Arrays;
-import java.util.Collections;
 
 public class lv6 extends AppCompatActivity {
 
@@ -162,7 +158,7 @@ public class lv6 extends AppCompatActivity {
         if (a1.getText().equals("for i in range(7,21,3):") && a2.getText().equals("a+=i") &&
                 a3.getText().equals("a=19") && a4.getText().equals("print(a)")){
             Toast.makeText(this, "все верно!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(getApplicationContext(), lv1_s.class);
+            Intent intent = new Intent(getApplicationContext(), lv1.class);
             startActivity(intent);
         }else {
             Toast.makeText(this, "Ошибка!", Toast.LENGTH_SHORT).show();
