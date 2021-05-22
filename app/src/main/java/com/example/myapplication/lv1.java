@@ -30,7 +30,8 @@ import retrofit2.http.Query;
 public class lv1 extends AppCompatActivity {
 
     public TextView variant1, variant2, variant3, variant4,
-            answer1, answer2, answer3, answer4, result,check;
+            answer1, answer2, answer3, answer4,
+            result,check;
     Display display;
     Point size;
     String text;
@@ -63,6 +64,12 @@ public class lv1 extends AppCompatActivity {
         display.getSize(size);
         int width = size.x;
         int height = size.y;
+        int k=60;
+        result.setTextSize(width/k);
+
+        check.setTextSize(width/(k+10));
+        check.setWidth(width/3);
+        check.setHeight(height/12);
 
         answer1.setWidth(width/4);
         answer2.setWidth(width/4);
@@ -72,23 +79,23 @@ public class lv1 extends AppCompatActivity {
         answer2.setHeight(height/12);
         answer3.setHeight(height/12);
         answer4.setHeight(height/12);
-        answer1.setTextSize(width/40);
-        answer2.setTextSize(width/40);
-        answer3.setTextSize(width/40);
-        answer4.setTextSize(width/40);
+        answer1.setTextSize(width/k);
+        answer2.setTextSize(width/k);
+        answer3.setTextSize(width/k);
+        answer4.setTextSize(width/k);
 
         variant1.setWidth(width/2);
         variant2.setWidth(width/2);
         variant3.setWidth(width/2);
         variant4.setWidth(width/2);
-        variant1.setHeight(height/12);
-        variant2.setHeight(height/12);
-        variant3.setHeight(height/12);
-        variant4.setHeight(height/12);
-        variant1.setTextSize(width/40);
-        variant2.setTextSize(width/40);
-        variant3.setTextSize(width/40);
-        variant4.setTextSize(width/40);
+        variant1.setHeight(height/6);
+        variant2.setHeight(height/6);
+        variant3.setHeight(height/6);
+        variant4.setHeight(height/6);
+        variant1.setTextSize(width/k);
+        variant2.setTextSize(width/k);
+        variant3.setTextSize(width/k);
+        variant4.setTextSize(width/k);
 
 
         TasksLoader tasksLoader = new TasksLoader();
