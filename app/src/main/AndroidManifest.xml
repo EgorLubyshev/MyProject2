@@ -21,6 +21,7 @@
         <activity android:name=".lv4" />
         <activity android:name=".lv5" />
         <activity android:name=".lv6" />
+        <activity android:name=".lv1" />
     </application>
 
 </manifest>

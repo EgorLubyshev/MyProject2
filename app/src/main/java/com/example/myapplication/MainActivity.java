@@ -67,6 +67,14 @@ public class MainActivity extends AppCompatActivity {
 
         lv6.setWidth(width/3);
         lv6.setHeight(height/9);
+
+        lv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), lv1.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }
