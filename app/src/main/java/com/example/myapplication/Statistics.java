@@ -4,13 +4,9 @@ import java.io.Serializable;
 
 public class Statistics implements Serializable {
 
-    private int mistakeСount;
-    private int time;
-
-    public Statistics (int mistakeСount,int time) {
-       this.mistakeСount=mistakeСount;
-       this.time=time;
-    }
+    public static int mistakeСount=0;
+    public static int time;
+    Statistics(){}
 
     public int getCount() {
         return mistakeСount;

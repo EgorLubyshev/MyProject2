@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,8 +31,11 @@ import retrofit2.http.Query;
 
 public class MainActivity extends AppCompatActivity {
     Button lv1,lv2,lv3,lv4,lv5,lv6,lv7,lv8,lv9;
+    Chronometer chronometer;
     Display display;
     Point size;
+    int mistake;
+    String time;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,12 +49,16 @@ public class MainActivity extends AppCompatActivity {
         lv7=findViewById(R.id.lv7);
         lv8=findViewById(R.id.lv8);
         lv9=findViewById(R.id.lv9);
+        chronometer=findViewById(R.id.chronometer);
+        chronometer.start();
 
         display = getWindowManager().getDefaultDisplay();
         size = new Point();
         display.getSize(size);
         int width = size.x;
         int height = size.y;
+
+        chronometer.setTextSize(width/60);
 
         lv1.setWidth(width/3);
         lv1.setHeight(height/6);
@@ -87,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
         lv9.setWidth(width/3);
         lv9.setHeight(height/6);
         lv9.setTextSize(width/25);
+
+        Statistics statistics = new Statistics();
 
         lv1.setOnClickListener(new View.OnClickListener() {
             @Override

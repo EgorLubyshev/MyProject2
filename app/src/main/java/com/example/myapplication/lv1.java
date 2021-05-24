@@ -37,6 +37,7 @@ public class lv1 extends AppCompatActivity {
     String text;
     ArrayList<Task> tasks = new ArrayList<>();
     ArrayList<String> arrOriginal = new ArrayList<>();
+    Statistics statistics = new Statistics();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,6 +97,7 @@ public class lv1 extends AppCompatActivity {
         variant2.setTextSize(width/k);
         variant3.setTextSize(width/k);
         variant4.setTextSize(width/k);
+
 
 
         TasksLoader tasksLoader = new TasksLoader();
@@ -163,7 +165,6 @@ public class lv1 extends AppCompatActivity {
                 check();
             }
         });
-
     }
 
     void setTask(Task task){
@@ -177,7 +178,6 @@ public class lv1 extends AppCompatActivity {
         result.setText(task.text);
 
     }
-
     void setAnswer(TextView variant){
         if (answer1.getText().equals("")){
             answer1.setText(variant.getText());
