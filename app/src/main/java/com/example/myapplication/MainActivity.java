@@ -42,44 +42,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        switch (id){
-            case 0 :
-                Intent intent = new Intent(getApplicationContext(), lv2.class);
-                startActivityForResult(intent, 1);
-                return;
-            case 1 :
-                intent = new Intent(getApplicationContext(), lv3.class);
-                startActivityForResult(intent, 1);
-                return;
-            case 2 :
-                intent = new Intent(getApplicationContext(), lv4.class);
-                startActivityForResult(intent, 1);
-                return;
-            case 3 :
-                intent = new Intent(getApplicationContext(), lv5.class);
-                startActivityForResult(intent, 1);
-                return;
-            case 4 :
-                intent = new Intent(getApplicationContext(), lv6.class);
-                startActivityForResult(intent, 1);
-                return;
-            case 5 :
-                intent = new Intent(getApplicationContext(), lv7.class);
-                startActivityForResult(intent, 1);
-                return;
-            case 6 :
-                intent = new Intent(getApplicationContext(), lv8.class);
-                startActivityForResult(intent, 1);
-                return;
-            case 7 :
-                intent = new Intent(getApplicationContext(), lv9.class);
-                startActivityForResult(intent, 1);
-                return;
-            default:
-                break;
-        }
-
         setContentView(R.layout.activity_main);
         lv1=findViewById(R.id.lv1);
         lv2=findViewById(R.id.lv2);
@@ -224,6 +186,42 @@ public class MainActivity extends AppCompatActivity {
         booleans[id] =data.getExtras().getBoolean("IsTrue");
         mistake +=  data.getExtras().getInt("mistakes");
         lv1.setText(String.valueOf( mistake));
+        switch (id){
+            case 0 :
+                Intent intent = new Intent(getApplicationContext(), lv2.class);
+                startActivityForResult(intent, 1);
+                return;
+            case 1 :
+                intent = new Intent(getApplicationContext(), lv3.class);
+                startActivityForResult(intent, 1);
+                return;
+            case 2 :
+                intent = new Intent(getApplicationContext(), lv4.class);
+                startActivityForResult(intent, 1);
+                return;
+            case 3 :
+                intent = new Intent(getApplicationContext(), lv5.class);
+                startActivityForResult(intent, 1);
+                return;
+            case 4 :
+                intent = new Intent(getApplicationContext(), lv6.class);
+                startActivityForResult(intent, 1);
+                return;
+            case 5 :
+                intent = new Intent(getApplicationContext(), lv7.class);
+                startActivityForResult(intent, 1);
+                return;
+            case 6 :
+                intent = new Intent(getApplicationContext(), lv8.class);
+                startActivityForResult(intent, 1);
+                return;
+            case 7 :
+                intent = new Intent(getApplicationContext(), lv9.class);
+                startActivityForResult(intent, 1);
+                return;
+            default:
+                break;
+        }
     }
 
 }
