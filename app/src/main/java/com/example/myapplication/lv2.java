@@ -35,6 +35,7 @@ public class lv2 extends AppCompatActivity {
     Display display;
     Point size;
     String text;
+    int mistake=0;
     ArrayList<Task> tasks = new ArrayList<>();
     ArrayList<String> arrOriginal = new ArrayList<>();
     @Override
@@ -222,11 +223,15 @@ public class lv2 extends AppCompatActivity {
                 answer3.getText().equals(arrOriginal.get(2)) &&
                 answer4.getText().equals(arrOriginal.get(3))) {
             Toast.makeText(this, "все верно!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(getApplicationContext(), lv3.class);
-            startActivity(intent);
+            Intent intent = new Intent(getApplicationContext(), lv2.class);
+            intent.putExtra("IsTrue", true);
+            intent.putExtra("mistakes", mistake);
+            intent.putExtra("id", 1);
+            setResult(RESULT_OK , intent);
             finish();
         } else {
             Toast.makeText(this, "Ошибка!", Toast.LENGTH_SHORT).show();
+            mistake+=1;
         }
     }
 
