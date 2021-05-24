@@ -31,6 +31,7 @@ import retrofit2.http.Query;
 
 public class MainActivity extends AppCompatActivity {
     Button lv1,lv2,lv3,lv4,lv5,lv6,lv7,lv8,lv9;
+    TextView select;
     Chronometer chronometer;
     Display display;
     Point size;
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         lv7=findViewById(R.id.lv7);
         lv8=findViewById(R.id.lv8);
         lv9=findViewById(R.id.lv9);
+        select=findViewById(R.id.SelectLv);
         chronometer=findViewById(R.id.chronometer);
         chronometer.start();
 
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         int height = size.y;
 
         chronometer.setTextSize(width/60);
+        select.setTextSize(width/60);
 
         lv1.setWidth(width/3);
         lv1.setHeight(height/6);

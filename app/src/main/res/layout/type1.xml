@@ -112,7 +112,7 @@
             android:gravity="center"
             android:textColor="@color/black"
             android:text="variant1"
-            android:background="@drawable/ramka2"
+            android:background="@drawable/ramka3"
             />
 
 
@@ -124,8 +124,9 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_toRightOf="@+id/variant1"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:text="variant2"
+            android:background="@drawable/ramka3"
             />
 
 
@@ -136,8 +137,9 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_below="@+id/variant1"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:text="variant3"
+            android:background="@drawable/ramka3"
             />
 
 
@@ -152,14 +154,14 @@
             android:gravity="center"
             android:layout_toRightOf="@+id/variant3"
             android:layout_below="@+id/variant1"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:text="variant4"
+            android:background="@drawable/ramka3"
 
             />
 
 
 
     </RelativeLayout>
-
 
 </LinearLayout>
