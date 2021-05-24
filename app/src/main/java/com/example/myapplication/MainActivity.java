@@ -222,6 +222,11 @@ public class MainActivity extends AppCompatActivity {
             default:
                 break;
         }
+        if (booleans[0] && booleans[1] && booleans[2] && booleans[3] &&
+                booleans[4] && booleans[5] && booleans[6] && booleans[7] &&
+                booleans[8]){
+            lv2.setText("kmjoinlm");
+        }
     }
 
 }
