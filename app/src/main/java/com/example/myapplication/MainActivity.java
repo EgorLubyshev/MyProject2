@@ -53,39 +53,39 @@ public class MainActivity extends AppCompatActivity {
         int height = size.y;
 
         lv1.setWidth(width/3);
-        lv1.setHeight(height/3);
+        lv1.setHeight(height/6);
         lv1.setTextSize(width/25);
 
         lv2.setWidth(width/3);
-        lv2.setHeight(height/3);
+        lv2.setHeight(height/6);
         lv2.setTextSize(width/25);
 
         lv3.setWidth(width/3);
-        lv3.setHeight(height/3);
+        lv3.setHeight(height/6);
         lv3.setTextSize(width/25);
 
         lv4.setWidth(width/3);
-        lv4.setHeight(height/3);
+        lv4.setHeight(height/6);
         lv4.setTextSize(width/25);
 
         lv5.setWidth(width/3);
-        lv5.setHeight(height/3);
+        lv5.setHeight(height/6);
         lv5.setTextSize(width/25);
 
         lv6.setWidth(width/3);
-        lv6.setHeight(height/3);
+        lv6.setHeight(height/6);
         lv6.setTextSize(width/25);
 
         lv7.setWidth(width/3);
-        lv7.setHeight(height/3);
+        lv7.setHeight(height/6);
         lv7.setTextSize(width/25);
 
         lv8.setWidth(width/3);
-        lv8.setHeight(height/3);
+        lv8.setHeight(height/6);
         lv8.setTextSize(width/25);
 
         lv9.setWidth(width/3);
-        lv9.setHeight(height/3);
+        lv9.setHeight(height/6);
         lv9.setTextSize(width/25);
 
         lv1.setOnClickListener(new View.OnClickListener() {
