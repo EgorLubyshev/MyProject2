@@ -103,7 +103,6 @@ public class lv1 extends AppCompatActivity {
             @Override
             public void doOnPostExecute(TaskAnswer answer) {
                 tasks = answer.data;
-                arrOriginal=tasks.get(0).variants;
                 setTask(tasks.get(0));
             }
         });
@@ -168,13 +167,13 @@ public class lv1 extends AppCompatActivity {
     }
 
     void setTask(Task task){
-        ArrayList<String> arrayList = task.variants;
+        ArrayList<String> arrayList = new ArrayList<>(task.variants);
         arrOriginal=task.variants;
         Collections.shuffle(arrayList);
-        variant1.setText(arrOriginal.get(0));
-        variant2.setText(arrOriginal.get(1));
-        variant3.setText(arrOriginal.get(2));
-        variant4.setText(arrOriginal.get(3));
+        variant1.setText(arrayList.get(0));
+        variant2.setText(arrayList.get(1));
+        variant3.setText(arrayList.get(2));
+        variant4.setText(arrayList.get(3));
         result.setText(task.text);
 
     }
