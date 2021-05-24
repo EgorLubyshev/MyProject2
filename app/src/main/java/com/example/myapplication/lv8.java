@@ -103,7 +103,7 @@ public class lv8 extends AppCompatActivity {
             @Override
             public void doOnPostExecute(TaskAnswer answer) {
                 tasks = answer.data;
-                setTask(tasks.get(2));
+                setTask(tasks.get(0));
             }
         });
 

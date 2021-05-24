@@ -103,6 +103,62 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        lv3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), lv3.class);
+                startActivity(intent);
+            }
+        });
+
+        lv4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), lv4.class);
+                startActivity(intent);
+            }
+        });
+
+        lv5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), lv5.class);
+                startActivity(intent);
+            }
+        });
+
+        lv6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), lv6.class);
+                startActivity(intent);
+            }
+        });
+
+        lv7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), lv7.class);
+                startActivity(intent);
+            }
+        });
+
+        lv8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), lv8.class);
+                startActivity(intent);
+            }
+        });
+
+        lv9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), lv9.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }
