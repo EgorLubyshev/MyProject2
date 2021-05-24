@@ -88,10 +88,10 @@ public class lv3 extends AppCompatActivity {
         variant2.setWidth(width/2);
         variant3.setWidth(width/2);
         variant4.setWidth(width/2);
-        variant1.setHeight(height/6);
-        variant2.setHeight(height/6);
-        variant3.setHeight(height/6);
-        variant4.setHeight(height/6);
+        variant1.setHeight(height/8);
+        variant2.setHeight(height/8);
+        variant3.setHeight(height/8);
+        variant4.setHeight(height/8);
         variant1.setTextSize(width/k);
         variant2.setTextSize(width/k);
         variant3.setTextSize(width/k);
