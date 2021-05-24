@@ -118,3 +118,53 @@
 http://10.67.172.157/EgorLubyshev/get_user.php
 
 get set update delite login
+
+
+
+
+
+a=0
+for i in range(3):
+   a=i
+print(a) 2
+
+a=17
+for i in range(1,7,2):
+   a=17
+   a+=i
+print(a) 22
+   
+a=12
+for i in range(3,21,3):
+   a+=1
+print(a) 18
+
+a=19
+for i in range(21,7,-7):
+   a-=i
+   a=19
+print(a) 19
+
+a=0
+while(a<7):
+   a+=1
+print(a) 7
+
+a=[1,2,3]
+for i in range(len(a)):
+   a[i]+=1
+print(*a) 2 3 4
+
+a="абвгд"
+for i in range(len(a)):
+   if a[i]>='в' :
+      print(a[i], end="") вгд
+a=["3","1","12","3"]
+for i in range(len(a)):
+   if i>1 :
+      print(a[i], end="") 123
+a=["Привет","Привет","Привет","Привет"]
+for i in range(len(a)):
+   b=a[i]
+   print(b[0],end="") ПППП
+
