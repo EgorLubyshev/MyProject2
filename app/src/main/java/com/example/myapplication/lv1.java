@@ -40,7 +40,7 @@ public class lv1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.lv1);
+        setContentView(R.layout.type1);
 
 
 
