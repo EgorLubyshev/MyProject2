@@ -27,7 +27,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-public class lv4 extends AppCompatActivity {
+public class lv8 extends AppCompatActivity {
 
     public TextView variant1, variant2, variant3, variant4,
             answer1, answer2, answer3, answer4,

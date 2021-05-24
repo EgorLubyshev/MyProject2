@@ -103,7 +103,6 @@ public class lv2 extends AppCompatActivity {
             @Override
             public void doOnPostExecute(TaskAnswer answer) {
                 tasks = answer.data;
-                arrOriginal=tasks.get(1).variants;
                 setTask(tasks.get(1));
             }
         });
@@ -168,7 +167,8 @@ public class lv2 extends AppCompatActivity {
     }
 
     void setTask(Task task){
-        ArrayList<String> arrayList = task.variants;
+        ArrayList<String> arrayList = new ArrayList<>(task.variants);
+        arrOriginal=task.variants;
         Collections.shuffle(arrayList);
         variant1.setText(arrayList.get(0));
         variant2.setText(arrayList.get(1));
@@ -217,8 +217,8 @@ public class lv2 extends AppCompatActivity {
         }
     }
     void check() {
-        if (    answer1.getText().equals(arrOriginal.get(0)) &&
-                answer2.getText().equals(arrOriginal.get(1)) &&
+        if (    (answer1.getText().equals(arrOriginal.get(0))) ||  (answer1.getText().equals(arrOriginal.get(1))) &&
+                (answer2.getText().equals(arrOriginal.get(1))) ||  (answer2.getText().equals(arrOriginal.get(0))) &&
                 answer3.getText().equals(arrOriginal.get(2)) &&
                 answer4.getText().equals(arrOriginal.get(3))) {
             Toast.makeText(this, "все верно!", Toast.LENGTH_SHORT).show();
