@@ -169,11 +169,12 @@ public class lv1 extends AppCompatActivity {
 
     void setTask(Task task){
         ArrayList<String> arrayList = task.variants;
+        arrOriginal=task.variants;
         Collections.shuffle(arrayList);
-        variant1.setText(arrayList.get(0));
-        variant2.setText(arrayList.get(1));
-        variant3.setText(arrayList.get(2));
-        variant4.setText(arrayList.get(3));
+        variant1.setText(arrOriginal.get(0));
+        variant2.setText(arrOriginal.get(1));
+        variant3.setText(arrOriginal.get(2));
+        variant4.setText(arrOriginal.get(3));
         result.setText(task.text);
 
     }
