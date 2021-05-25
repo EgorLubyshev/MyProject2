@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Records extends AppCompatActivity {
     ListView listView;
 
-    int mistake=0;
+    int mistake;
     String time;
     boolean[] booleans = new boolean[9];
     ArrayList<State> states = new ArrayList();
@@ -31,19 +31,14 @@ public class Records extends AppCompatActivity {
         time = intent.getExtras().getString("time");
 
         setInitialData();
-        // получаем элемент ListView
         listView = (ListView) findViewById(R.id.listView);
-        // создаем адаптер
         StateAdapter stateAdapter = new StateAdapter(this, R.layout.list_adapter, states);
-        // устанавливаем адаптер
         ListView.setAdapter(stateAdapter);
-        // слушатель выбора в списке
         AdapterView.OnItemClickListener itemListener = new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 
-                // получаем выбранный пункт
                 State selectedState = (State)parent.getItemAtPosition(position);
                 Toast.makeText(getApplicationContext(), "Был выбран пункт " + selectedState.getMistake(),
                         Toast.LENGTH_SHORT).show();
