@@ -11,6 +11,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Records extends AppCompatActivity {
     ListView listView;
@@ -36,6 +38,13 @@ public class Records extends AppCompatActivity {
 
 
         listView = (ListView) findViewById(R.id.listView);
+
+        Collections.sort(states, new Comparator<State>() {
+            @Override
+            public int compare(State o1, State o2) {
+                return o2.getId() - o1.getId();
+            }
+        });
         StateAdapter stateAdapter = new StateAdapter(this, R.layout.list_adapter, states);
         listView.setAdapter(stateAdapter);
         AdapterView.OnItemClickListener itemListener = new AdapterView.OnItemClickListener() {
