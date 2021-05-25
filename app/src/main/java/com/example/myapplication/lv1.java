@@ -39,6 +39,7 @@ public class lv1 extends AppCompatActivity {
     ArrayList<Task> tasks = new ArrayList<>();
     ArrayList<String> arrOriginal = new ArrayList<>();
     Statistics statistics = new Statistics();
+    boolean t=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -236,7 +237,12 @@ public class lv1 extends AppCompatActivity {
                 answer4.getText().equals(arrOriginal.get(3))) {
             Toast.makeText(this, "все верно!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplicationContext(), lv2.class);
-            intent.putExtra("IsTrue", true);
+            if(t){
+                intent.putExtra("IsTrue", true);
+                t=false;
+            }else {
+                intent.putExtra("IsTrue", false);
+            }
             intent.putExtra("mistakes", mistake);
             intent.putExtra("id", 0);
             setResult(RESULT_OK , intent);

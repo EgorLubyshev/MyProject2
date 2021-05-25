@@ -33,7 +33,6 @@ public class Menu extends AppCompatActivity {
     TextView title, menu, records, exit;
     Display display;
     Point size;
-    Chronometer chronometer;
 
     int mistake=0;
     String time;
@@ -46,8 +45,6 @@ public class Menu extends AppCompatActivity {
        menu=findViewById(R.id.menu);
        records=findViewById(R.id.record);
        exit=findViewById(R.id.exit);
-        chronometer=findViewById(R.id.chronometer);
-        chronometer.start();
 
        display = getWindowManager().getDefaultDisplay();
        size = new Point();
@@ -69,8 +66,6 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                intent.putExtra("mistake", mistake);
-                intent.putExtra("base", chronometer.getBase());
                 startActivityForResult(intent, 1);
             }
         });
@@ -102,9 +97,7 @@ public class Menu extends AppCompatActivity {
         countCurrect = data.getExtras().getInt("IsTrue");
         mistake =  data.getExtras().getInt("mistakes");
         time= data.getExtras().getString("time");
-        if (countCurrect==9){
 
-        }
     }
 
 }

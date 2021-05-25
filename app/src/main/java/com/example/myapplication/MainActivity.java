@@ -206,7 +206,6 @@ public class MainActivity extends AppCompatActivity {
         id=data.getExtras().getInt("id");
         if (data.getExtras().getBoolean("IsTrue")){
             countCurrect ++;
-        }else {
         }
         mistake +=  data.getExtras().getInt("mistakes");
         count.setText(String.valueOf(mistake));

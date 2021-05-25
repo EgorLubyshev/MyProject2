@@ -9,24 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Menu">
+        <activity android:name=".Menu" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".lv2" />
-        <activity android:name=".lv3" />
-        <activity android:name=".lv4" />
-        <activity android:name=".lv5" />
-        <activity android:name=".lv6" />
-        <activity android:name=".lv1" />
-        <activity android:name=".lv7" />
-        <activity android:name=".lv8" />
-        <activity android:name=".lv9" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Records" />
+        <activity android:name=".lv2" android:screenOrientation="portrait" />
+        <activity android:name=".lv3" android:screenOrientation="portrait" />
+        <activity android:name=".lv4" android:screenOrientation="portrait" />
+        <activity android:name=".lv5" android:screenOrientation="portrait"/>
+        <activity android:name=".lv6" android:screenOrientation="portrait"/>
+        <activity android:name=".lv1" android:screenOrientation="portrait"/>
+        <activity android:name=".lv7" android:screenOrientation="portrait"/>
+        <activity android:name=".lv8" android:screenOrientation="portrait"/>
+        <activity android:name=".lv9" android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity" android:screenOrientation="portrait" />
+        <activity android:name=".Records" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
