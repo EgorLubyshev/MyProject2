@@ -33,6 +33,10 @@ public class Menu extends AppCompatActivity {
     TextView title, menu, records, exit;
     Display display;
     Point size;
+
+    int mistake=0;
+    String time;
+    boolean[] booleans = new boolean[9];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +67,7 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, 1);
             }
         });
 
@@ -71,6 +75,9 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Records.class);
+                intent.putExtra("IsTrue", booleans);
+                intent.putExtra("mistakes", mistake);
+                intent.putExtra("time", time);
                 startActivity(intent);
             }
         });
@@ -83,6 +90,15 @@ public class Menu extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        booleans = data.getExtras().getBooleanArray("IsTrue");
+        mistake +=  data.getExtras().getInt("mistakes");
+        time = data.getExtras().getString("time");
+        exit.setText(String.valueOf( booleans[0])+""+ mistake+""+time);
     }
 
 }

@@ -167,6 +167,15 @@ public class lv4 extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent();
+        intent.putExtra("mistakes", mistake);
+        intent.putExtra("id", 999);
+        setResult(RESULT_OK , intent);
+        finish();
+    }
+
     void setTask(Task task){
         ArrayList<String> arrayList = new ArrayList<>(task.variants);
         arrOriginal=task.variants;

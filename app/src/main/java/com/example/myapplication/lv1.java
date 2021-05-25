@@ -166,6 +166,17 @@ public class lv1 extends AppCompatActivity {
                 check();
             }
         });
+
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent();
+        intent.putExtra("mistakes", mistake);
+        intent.putExtra("id", 999);
+        setResult(RESULT_OK , intent);
+        finish();
     }
 
     void setTask(Task task){

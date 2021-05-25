@@ -177,6 +177,16 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     @Override
+    public void onBackPressed() {
+        Intent intent = new Intent();
+        intent.putExtra("IsTrue", booleans);
+        intent.putExtra("mistakes", mistake);
+        time= chronometer.getText().toString();
+        intent.putExtra("time", time);
+        setResult(RESULT_OK , intent);
+        finish();
+    }
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (data == null) {
@@ -225,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
         if (booleans[0] && booleans[1] && booleans[2] && booleans[3] &&
                 booleans[4] && booleans[5] && booleans[6] && booleans[7] &&
                 booleans[8]){
-            lv2.setText("kmjoinlm");
+            chronometer.stop();
         }
     }
 
