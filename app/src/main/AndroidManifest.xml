@@ -26,6 +26,7 @@
         <activity android:name=".lv8" />
         <activity android:name=".lv9" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".Records" />
     </application>
 
 </manifest>

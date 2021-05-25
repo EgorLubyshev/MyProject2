@@ -98,6 +98,11 @@ public class Menu extends AppCompatActivity {
         booleans = data.getExtras().getBooleanArray("IsTrue");
         mistake +=  data.getExtras().getInt("mistakes");
         time = data.getExtras().getString("time");
+        if (booleans[0] && booleans[1] && booleans[2] && booleans[3] &&
+                booleans[4] && booleans[5] && booleans[6] && booleans[7] &&
+                booleans[8]){
+
+        }
     }
 
 }
