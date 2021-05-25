@@ -110,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
         lv9.setTextSize(width/25);
 
         Intent intent1 = getIntent();
-        mistake+=intent1.getExtras().getInt("mistake");
         count.setText(String.valueOf(mistake));
         chronometer.start();
 
