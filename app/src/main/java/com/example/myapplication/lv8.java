@@ -184,6 +184,20 @@ public class lv8 extends AppCompatActivity {
         variant2.setText(arrayList.get(1));
         variant3.setText(arrayList.get(2));
         variant4.setText(arrayList.get(3));
+
+        if (variant1.getText().length()>30){
+            variant1.setTextSize(size.x/150);
+        }
+        if (variant2.getText().length()>30){
+            variant2.setTextSize(size.x/150);
+        }
+        if (variant3.getText().length()>30){
+            variant3.setTextSize(size.x/150);
+        }
+        if (variant4.getText().length()>30){
+            variant4.setTextSize(size.x/150);
+        }
+
         result.setText(task.text);
     }
 
