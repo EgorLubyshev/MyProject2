@@ -64,7 +64,7 @@ public class Menu extends AppCompatActivity {
         records.setHeight(height/6);
        exit.setTextSize(width/40);
         exit.setHeight(height/6);
-        time=chronometer.getText().toString();
+
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,6 +101,7 @@ public class Menu extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         countCurrect = data.getExtras().getInt("IsTrue");
         mistake =  data.getExtras().getInt("mistakes");
+        time= data.getExtras().getString("time");
         if (countCurrect==9){
 
         }

@@ -26,11 +26,11 @@ public class LocalDB {
         mDataBase = mOpenHelper.getWritableDatabase();
     }
 
-    public long insert(String time,boolean[] booleans ,int mistake) {
+    public long insert(String time, int countcorrect ,int mistake) {
         ContentValues cv=new ContentValues();
         cv.put(COLUMN_MISTAKE, mistake);
         cv.put(COLUMN_TIME, time);
-        cv.put(COLUMN_COUNTCURRECT, String.valueOf(booleans));
+        cv.put(COLUMN_COUNTCURRECT, countcorrect);
         return mDataBase.insert(TABLE_NAME, null, cv);
     }
 

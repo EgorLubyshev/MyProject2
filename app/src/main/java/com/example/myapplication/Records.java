@@ -26,7 +26,7 @@ public class Records extends AppCompatActivity {
         setContentView(R.layout.records);
 
         LocalDB localDB = new LocalDB(this);
-        states=localDB.selectAll();
+        states = localDB.selectAll();
 
         listView=findViewById(R.id.listView);
         Intent intent = getIntent();
@@ -34,7 +34,7 @@ public class Records extends AppCompatActivity {
         countCurrect = intent.getExtras().getInt ("IsTrue");
         time = intent.getExtras().getString("time");
 
-        setInitialData();
+
         listView = (ListView) findViewById(R.id.listView);
         StateAdapter stateAdapter = new StateAdapter(this, R.layout.list_adapter, states);
         listView.setAdapter(stateAdapter);
@@ -44,7 +44,7 @@ public class Records extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 
                 State selectedState = (State)parent.getItemAtPosition(position);
-                Toast.makeText(getApplicationContext(), "Был выбран пункт " + selectedState.getMistake(),
+                Toast.makeText(getApplicationContext(), "Был выбран пункт " + selectedState.getId(),
                         Toast.LENGTH_SHORT).show();
             }
         };
@@ -52,14 +52,7 @@ public class Records extends AppCompatActivity {
     }
 
 
-    private void setInitialData(){
 
-       states.add(new State(mistake, time  ,countCurrect, 1));
-        states.add(new State(mistake, time  ,countCurrect, 2));
-        states.add(new State(mistake, time  , countCurrect, 3));
-        states.add(new State(mistake, time  ,countCurrect, 2));
-        states.add(new State(mistake, time  ,countCurrect, 2));
-    }
 
 
 }

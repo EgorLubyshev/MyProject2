@@ -27,16 +27,22 @@ public class StateAdapter extends ArrayAdapter<State> {
 
         View view=inflater.inflate(this.layout, parent, false);
 
+        TextView id = (TextView) view.findViewById(R.id.title_id);
+        TextView Setid = (TextView) view.findViewById(R.id.Set_id);
+
         TextView time = (TextView) view.findViewById(R.id.title_time);
         TextView SetTime = (TextView) view.findViewById(R.id.Set_time);
         TextView mistake = (TextView) view.findViewById(R.id.title_mistake);
         TextView mistakeCount = (TextView) view.findViewById(R.id.Set_mistakeCount);
+        TextView countCorrect = (TextView) view.findViewById(R.id.title_countCorrect);
+        TextView Set_CountCorrect = (TextView) view.findViewById(R.id.Set_countCorrect);
 
         State state = states.get(position);
 
-
+        Setid.setText(String.valueOf( state.getId()));
         SetTime.setText( state.getTime());
         mistakeCount.setText(String.valueOf( state.getMistake()));
+        Set_CountCorrect.setText( String.valueOf( state.getCountCurrect()));
 
         return view;
     }

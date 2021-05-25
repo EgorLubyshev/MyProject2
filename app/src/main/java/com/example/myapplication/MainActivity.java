@@ -246,9 +246,16 @@ public class MainActivity extends AppCompatActivity {
             default:
 
         }
-        if (countCurrect==9){
-            chronometer.stop();
-        }
+//        if (countCurrect==9){
+//            chronometer.stop();
+//
+//        }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        LocalDB localDB = new LocalDB(this);
+        localDB.insert(chronometer.getText().toString(), countCurrect, mistake);
+    }
 }
