@@ -49,6 +49,10 @@ public class Records extends AppCompatActivity {
     private void setInitialData(){
 
        states.add(new State(mistake, time  ,booleans));
+        states.add(new State(mistake, time  ,booleans));
+        states.add(new State(mistake, time  ,booleans));
+        states.add(new State(mistake, time  ,booleans));
+        states.add(new State(mistake, time  ,booleans));
     }
 
 

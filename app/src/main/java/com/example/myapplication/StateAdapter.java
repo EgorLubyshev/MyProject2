@@ -36,7 +36,7 @@ public class StateAdapter extends ArrayAdapter<State> {
 
 
         SetTime.setText( state.getTime());
-        mistakeCount.setText(state.getMistake());
+        mistakeCount.setText(String.valueOf( state.getMistake()));
 
         return view;
     }
