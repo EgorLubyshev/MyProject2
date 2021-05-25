@@ -65,8 +65,8 @@ public class lv7 extends AppCompatActivity {
         display.getSize(size);
         int width = size.x;
         int height = size.y;
-        int k=60;
-        result.setTextSize(width/k);
+        int k=80;
+        result.setTextSize(width/(k-20));
 
         check.setTextSize(width/(k+10));
         check.setWidth(width/3);
@@ -104,7 +104,7 @@ public class lv7 extends AppCompatActivity {
             @Override
             public void doOnPostExecute(TaskAnswer answer) {
                 tasks = answer.data;
-                setTask(tasks.get(0));
+                setTask(tasks.get(7));
             }
         });
 

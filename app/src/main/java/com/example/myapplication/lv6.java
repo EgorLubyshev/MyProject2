@@ -183,7 +183,7 @@ public class lv6 extends AppCompatActivity {
         variant2.setText(arrayList.get(1));
         variant3.setText(arrayList.get(2));
         variant4.setText(arrayList.get(3));
-        result.setText(task.text);
+        result.setText("");
     }
 
     void setAnswer(TextView variant){

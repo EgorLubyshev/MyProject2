@@ -65,8 +65,8 @@ public class lv8 extends AppCompatActivity {
         display.getSize(size);
         int width = size.x;
         int height = size.y;
-        int k=60;
-        result.setTextSize(width/k);
+        int k=80;
+        result.setTextSize(width/(k-20));
 
         check.setTextSize(width/(k+10));
         check.setWidth(width/3);
