@@ -33,7 +33,7 @@ public class Records extends AppCompatActivity {
         setInitialData();
         listView = (ListView) findViewById(R.id.listView);
         StateAdapter stateAdapter = new StateAdapter(this, R.layout.list_adapter, states);
-        ListView.setAdapter(stateAdapter);
+        listView.setAdapter(stateAdapter);
         AdapterView.OnItemClickListener itemListener = new AdapterView.OnItemClickListener() {
 
             @Override
