@@ -31,7 +31,7 @@ import retrofit2.http.Query;
 
 public class MainActivity extends AppCompatActivity {
     Button lv1,lv2,lv3,lv4,lv5,lv6,lv7,lv8,lv9;
-    TextView select;
+    TextView select, mis, count;
     Chronometer chronometer;
     Display display;
     Point size;
@@ -53,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
         lv8=findViewById(R.id.lv8);
         lv9=findViewById(R.id.lv9);
         select=findViewById(R.id.SelectLv);
+        mis=findViewById(R.id.mistakeCount);
+        count=findViewById(R.id.Count);
+
+
+
         chronometer=findViewById(R.id.chronometer);
         chronometer.start();
 
@@ -65,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
 
         chronometer.setTextSize(width/60);
         select.setTextSize(width/60);
+        mis.setTextSize(width/60);
+        count.setTextSize(width/60);
 
         lv1.setWidth(width/3);
         lv1.setHeight(height/6);
@@ -199,6 +206,7 @@ public class MainActivity extends AppCompatActivity {
             booleans[id] = data.getExtras().getBoolean("IsTrue");
         }
         mistake +=  data.getExtras().getInt("mistakes");
+        count.setText(String.valueOf(mistake));
         switch (id){
             case 0 :
                 Intent intent = new Intent(getApplicationContext(), lv2.class);
