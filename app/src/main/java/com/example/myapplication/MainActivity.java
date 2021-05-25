@@ -193,9 +193,12 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         id=data.getExtras().getInt("id");
-        booleans[id] =data.getExtras().getBoolean("IsTrue");
+        if (id>8){
+
+        }else {
+            booleans[id] = data.getExtras().getBoolean("IsTrue");
+        }
         mistake +=  data.getExtras().getInt("mistakes");
-        lv1.setText(String.valueOf( mistake));
         switch (id){
             case 0 :
                 Intent intent = new Intent(getApplicationContext(), lv2.class);
@@ -230,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 1);
                 return;
             default:
-                break;
+
         }
         if (booleans[0] && booleans[1] && booleans[2] && booleans[3] &&
                 booleans[4] && booleans[5] && booleans[6] && booleans[7] &&
