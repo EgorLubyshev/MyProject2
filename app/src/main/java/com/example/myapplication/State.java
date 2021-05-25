@@ -1,14 +1,18 @@
 package com.example.myapplication;
 
-class State {
+import java.io.Serializable;
+
+class State implements Serializable {
+    int id;
     int mistake;
     String time;
     boolean[] booleans;
 
-    State(int mistake, String time, boolean[] booleans ){
+    State(int mistake, String time, boolean[] booleans, int id ){
         this.booleans=booleans;
         this.mistake=mistake;
         this.time=time;
+        this.id=id;
 
     }
 
@@ -35,5 +39,13 @@ class State {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

@@ -13,18 +13,22 @@
         android:background="@color/black"
         android:layout_height="0dp"
         android:layout_weight="100">
+
         <Chronometer
-            android:id="@+id/chronometer"
+            android:id="@+id/chronometer1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            />
+            android:layout_marginRight="14dp" />
+
         <TextView
             android:id="@+id/SelectLv"
             android:layout_width="wrap_content"
-            android:text="Выбор уровня"
             android:layout_height="wrap_content"
-            />
+            android:layout_above="@+id/lv1"
+            android:layout_marginBottom="33dp"
+            android:text="Выбор уровня :" />
+
         <Button
             android:id="@+id/lv1"
             android:layout_width="wrap_content"
@@ -148,9 +152,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:text="Количество Ошибок : "
+            android:layout_marginBottom="34dp"
 
-            />
+            android:text="Количество Ошибок : " />
+
         <TextView
             android:id="@+id/Count"
             android:layout_width="wrap_content"
@@ -158,6 +163,7 @@
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/mistakeCount"
             android:text="0"
+            android:layout_marginBottom="34dp"
             />
     </RelativeLayout>
 

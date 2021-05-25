@@ -33,6 +33,7 @@ public class Menu extends AppCompatActivity {
     TextView title, menu, records, exit;
     Display display;
     Point size;
+    Chronometer chronometer;
 
     int mistake=0;
     String time;
@@ -45,7 +46,8 @@ public class Menu extends AppCompatActivity {
        menu=findViewById(R.id.menu);
        records=findViewById(R.id.record);
        exit=findViewById(R.id.exit);
-
+        chronometer=findViewById(R.id.chronometer);
+        chronometer.start();
 
        display = getWindowManager().getDefaultDisplay();
        size = new Point();
@@ -62,11 +64,13 @@ public class Menu extends AppCompatActivity {
         records.setHeight(height/6);
        exit.setTextSize(width/40);
         exit.setHeight(height/6);
-
+        time=chronometer.getText().toString();
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.putExtra("mistake", mistake);
+                intent.putExtra("base", chronometer.getBase());
                 startActivityForResult(intent, 1);
             }
         });
@@ -96,8 +100,7 @@ public class Menu extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         booleans = data.getExtras().getBooleanArray("IsTrue");
-        mistake +=  data.getExtras().getInt("mistakes");
-        time = data.getExtras().getString("time");
+        mistake =  data.getExtras().getInt("mistakes");
         if (booleans[0] && booleans[1] && booleans[2] && booleans[3] &&
                 booleans[4] && booleans[5] && booleans[6] && booleans[7] &&
                 booleans[8]){

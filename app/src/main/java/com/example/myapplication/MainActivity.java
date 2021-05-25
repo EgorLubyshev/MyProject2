@@ -55,11 +55,11 @@ public class MainActivity extends AppCompatActivity {
         select=findViewById(R.id.SelectLv);
         mis=findViewById(R.id.mistakeCount);
         count=findViewById(R.id.Count);
+        chronometer=findViewById(R.id.chronometer1);
 
 
 
-        chronometer=findViewById(R.id.chronometer);
-        chronometer.start();
+
 
 
         display = getWindowManager().getDefaultDisplay();
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         int height = size.y;
 
         chronometer.setTextSize(width/60);
-        select.setTextSize(width/60);
+        select.setTextSize(width/40);
         mis.setTextSize(width/60);
         count.setTextSize(width/60);
 
@@ -109,7 +109,11 @@ public class MainActivity extends AppCompatActivity {
         lv9.setHeight(height/6);
         lv9.setTextSize(width/25);
 
-        Statistics statistics = new Statistics();
+        Intent intent1 = getIntent();
+        mistake+=intent1.getExtras().getInt("mistake");
+        count.setText(String.valueOf(mistake));
+        chronometer.start();
+
 
         lv1.setOnClickListener(new View.OnClickListener() {
             @Override
