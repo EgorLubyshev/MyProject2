@@ -16,12 +16,14 @@
     <TextView
         android:gravity="center"
         android:id="@+id/title_id"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Номер попытки: "
         tools:ignore="MissingConstraints" />
     <TextView
         android:id="@+id/title_time"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/title_id"
@@ -32,6 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ошибки : "
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/title_time"
         tools:ignore="MissingConstraints" />
 
@@ -40,6 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Уровни : "
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/title_mistake"
         tools:ignore="MissingConstraints" />
     </LinearLayout>
@@ -56,6 +60,7 @@
         android:id="@+id/Set_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="Номер попытки :"
         app:layout_constraintLeft_toRightOf="@+id/title_id"
         tools:ignore="MissingConstraints" />
@@ -68,6 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Время"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/title_id"
         app:layout_constraintLeft_toRightOf="@+id/title_time"
         tools:ignore="MissingConstraints" />
@@ -77,6 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Количество ошибок :"
+        android:textColor="@color/white"
         app:layout_constraintLeft_toRightOf="@+id/title_mistake"
         app:layout_constraintTop_toBottomOf="@+id/title_time"
         tools:ignore="MissingConstraints" />
@@ -86,7 +93,8 @@
         android:id="@+id/Set_countCorrect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Количество ошибок :"
+        android:text="Количество уровне :"
+        android:textColor="@color/white"
         app:layout_constraintLeft_toRightOf="@+id/title_countCorrect"
         app:layout_constraintTop_toBottomOf="@+id/Set_mistakeCount"
         tools:ignore="MissingConstraints" />
