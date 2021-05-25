@@ -17,17 +17,21 @@ public class Records extends AppCompatActivity {
 
     int mistake;
     String time;
-    boolean[] booleans = new boolean[9];
+    int countCurrect;
     ArrayList<State> states = new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.records);
+
+        LocalDB localDB = new LocalDB(this);
+        states=localDB.selectAll();
+
         listView=findViewById(R.id.listView);
         Intent intent = getIntent();
         mistake=intent.getExtras().getInt("mistakes");
-        booleans = intent.getExtras().getBooleanArray ("IsTrue");
+        countCurrect = intent.getExtras().getInt ("IsTrue");
         time = intent.getExtras().getString("time");
 
         setInitialData();
@@ -46,13 +50,15 @@ public class Records extends AppCompatActivity {
         };
         listView.setOnItemClickListener(itemListener);
     }
+
+
     private void setInitialData(){
 
-       states.add(new State(mistake, time  ,booleans));
-        states.add(new State(mistake, time  ,booleans));
-        states.add(new State(mistake, time  ,booleans));
-        states.add(new State(mistake, time  ,booleans));
-        states.add(new State(mistake, time  ,booleans));
+       states.add(new State(mistake, time  ,countCurrect, 1));
+        states.add(new State(mistake, time  ,countCurrect, 2));
+        states.add(new State(mistake, time  , countCurrect, 3));
+        states.add(new State(mistake, time  ,countCurrect, 2));
+        states.add(new State(mistake, time  ,countCurrect, 2));
     }
 
 

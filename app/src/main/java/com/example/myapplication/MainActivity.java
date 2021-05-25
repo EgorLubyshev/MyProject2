@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     Point size;
     int mistake=0, id=999;
     String time;
-    boolean[] booleans = new boolean[9];
+    int countCurrect=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Intent intent = new Intent();
-        intent.putExtra("IsTrue", booleans);
+        intent.putExtra("IsTrue", countCurrect);
         intent.putExtra("mistakes", mistake);
         time= chronometer.getText().toString();
         intent.putExtra("time", time);
@@ -204,10 +204,9 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         id=data.getExtras().getInt("id");
-        if (id>8){
-
+        if (data.getExtras().getBoolean("IsTrue")){
+            countCurrect ++;
         }else {
-            booleans[id] = data.getExtras().getBoolean("IsTrue");
         }
         mistake +=  data.getExtras().getInt("mistakes");
         count.setText(String.valueOf(mistake));
@@ -247,9 +246,7 @@ public class MainActivity extends AppCompatActivity {
             default:
 
         }
-        if (booleans[0] && booleans[1] && booleans[2] && booleans[3] &&
-                booleans[4] && booleans[5] && booleans[6] && booleans[7] &&
-                booleans[8]){
+        if (countCurrect==9){
             chronometer.stop();
         }
     }

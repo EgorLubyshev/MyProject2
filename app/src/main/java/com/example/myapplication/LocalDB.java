@@ -17,12 +17,7 @@ public class LocalDB {
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_MISTAKE = "mistake";
     private static final String COLUMN_TIME = "time";
-    private static final String COLUMN_BOOLEANS = "booleans";
-
-    private static final int NUM_COLUMN_ID = 0;
-    private static final int NUM_COLUMN_MISTAKE = 1;
-    private static final int NUM_COLUMN_TIME = 2;
-    private static final int NUM_COLUMN_BOOLEANS = 3;
+    private static final String COLUMN_COUNTCURRECT = "countCurrect";
 
     private SQLiteDatabase mDataBase;
 
@@ -35,8 +30,25 @@ public class LocalDB {
         ContentValues cv=new ContentValues();
         cv.put(COLUMN_MISTAKE, mistake);
         cv.put(COLUMN_TIME, time);
-        cv.put(COLUMN_BOOLEANS, String.valueOf(booleans));
+        cv.put(COLUMN_COUNTCURRECT, String.valueOf(booleans));
         return mDataBase.insert(TABLE_NAME, null, cv);
+    }
+
+    public ArrayList<State> selectAll() {
+        Cursor cursor = mDataBase.query(TABLE_NAME, null, null, null, null, null, null);
+
+        ArrayList<State> arr = new ArrayList<State>();
+        cursor.moveToFirst();
+        if (!cursor.isAfterLast()) {
+            do {
+                int id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID));
+                String time = cursor.getString(cursor.getColumnIndex(COLUMN_TIME));
+                int count = cursor.getInt(cursor.getColumnIndex(COLUMN_COUNTCURRECT));
+                int mistake = cursor.getInt(cursor.getColumnIndex(COLUMN_MISTAKE));
+                arr.add(new State(mistake, time, count, id));
+            } while (cursor.moveToNext());
+        }
+        return arr;
     }
 
     private class OpenHelper extends SQLiteOpenHelper {
@@ -48,9 +60,9 @@ public class LocalDB {
         public void onCreate(SQLiteDatabase db) {
             String query = "CREATE TABLE " + TABLE_NAME + " (" +
                     COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    COLUMN_MISTAKE+ " INT, " +
+                    COLUMN_MISTAKE + " INT, " +
                     COLUMN_TIME + " TEXT, " +
-                    COLUMN_BOOLEANS + " INT "+ ";";
+                    COLUMN_COUNTCURRECT + " INT);";
             db.execSQL(query);
         }
 

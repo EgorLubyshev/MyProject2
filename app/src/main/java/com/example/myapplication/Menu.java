@@ -37,7 +37,7 @@ public class Menu extends AppCompatActivity {
 
     int mistake=0;
     String time;
-    boolean[] booleans = new boolean[9];
+    int countCurrect=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +79,7 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Records.class);
-                intent.putExtra("IsTrue", booleans);
+                intent.putExtra("IsTrue", countCurrect);
                 intent.putExtra("mistakes", mistake);
                 intent.putExtra("time", time);
                 startActivity(intent);
@@ -99,11 +99,9 @@ public class Menu extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        booleans = data.getExtras().getBooleanArray("IsTrue");
+        countCurrect = data.getExtras().getInt("IsTrue");
         mistake =  data.getExtras().getInt("mistakes");
-        if (booleans[0] && booleans[1] && booleans[2] && booleans[3] &&
-                booleans[4] && booleans[5] && booleans[6] && booleans[7] &&
-                booleans[8]){
+        if (countCurrect==9){
 
         }
     }
