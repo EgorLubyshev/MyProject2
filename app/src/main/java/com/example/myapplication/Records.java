@@ -7,6 +7,8 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class Records extends AppCompatActivity {
     ListView listView;
 
@@ -30,12 +32,16 @@ public class Records extends AppCompatActivity {
                 String.valueOf(mistake)+String.valueOf (booleans[2])+time,
                 "fefe"
         };
-        adapter = new ArrayAdapter<>(this,
+        adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, catNames);
         // Привяжем массив через адаптер к ListView
         listView.setAdapter(adapter);
 
     }
-
+    class Stats{
+        int type, id;
+        String text;
+        ArrayList<String> variants;
+    }
 
 }
