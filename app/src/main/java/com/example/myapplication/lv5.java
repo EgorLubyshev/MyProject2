@@ -104,7 +104,7 @@ public class lv5 extends AppCompatActivity {
             @Override
             public void doOnPostExecute(TaskAnswer answer) {
                 tasks = answer.data;
-                setTask(tasks.get(0));
+                setTask(tasks.get(5));
             }
         });
 

@@ -41,7 +41,7 @@ public class lv6 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.type2);
+        setContentView(R.layout.type1);
 
 
 
@@ -72,10 +72,10 @@ public class lv6 extends AppCompatActivity {
         check.setWidth(width/3);
         check.setHeight(height/12);
 
-        answer1.setWidth(width/2);
-        answer2.setWidth(width/2);
-        answer3.setWidth(width/2);
-        answer4.setWidth(width/2);
+        answer1.setWidth(width/4);
+        answer2.setWidth(width/4);
+        answer3.setWidth(width/4);
+        answer4.setWidth(width/4);
         answer1.setHeight(height/12);
         answer2.setHeight(height/12);
         answer3.setHeight(height/12);
@@ -104,7 +104,7 @@ public class lv6 extends AppCompatActivity {
             @Override
             public void doOnPostExecute(TaskAnswer answer) {
                 tasks = answer.data;
-                setTask(tasks.get(0));
+                setTask(tasks.get(6));
             }
         });
 
