@@ -39,6 +39,7 @@ public class lv4 extends AppCompatActivity {
     ArrayList<Task> tasks = new ArrayList<>();
     ArrayList<String> arrOriginal = new ArrayList<>();
     boolean t=true;
+    int points=100;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -238,6 +239,7 @@ public class lv4 extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), lv2.class);
             if(t){
                 intent.putExtra("IsTrue", true);
+                intent.putExtra("points", points);
                 t=false;
             }else {
                 intent.putExtra("IsTrue", false);
@@ -249,6 +251,7 @@ public class lv4 extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Ошибка!", Toast.LENGTH_SHORT).show();
             mistake+=1;
+            points-=10;
         }
     }
 
