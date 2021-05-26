@@ -16,9 +16,11 @@
 
         <Chronometer
             android:id="@+id/chronometer1"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/ramka6"
             android:layout_alignParentRight="true"
             android:layout_marginRight="14dp" />
 

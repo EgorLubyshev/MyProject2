@@ -69,7 +69,10 @@ public class MainActivity extends AppCompatActivity {
         int width = size.x;
         int height = size.y;
 
-        chronometer.setTextSize(width/60);
+        chronometer.setTextSize(width/80);
+        chronometer.setWidth(width/6);
+        chronometer.setHeight(height/16);
+
         select.setTextSize(width/40);
         mis.setTextSize(width/60);
         count.setTextSize(width/60);
