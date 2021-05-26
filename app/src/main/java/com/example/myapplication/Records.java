@@ -31,10 +31,7 @@ public class Records extends AppCompatActivity {
         states = localDB.selectAll();
 
         listView=findViewById(R.id.listView);
-        Intent intent = getIntent();
-        mistake=intent.getExtras().getInt("mistakes");
-        countCurrect = intent.getExtras().getInt ("IsTrue");
-        time = intent.getExtras().getString("time");
+
 
 
         listView = (ListView) findViewById(R.id.listView);

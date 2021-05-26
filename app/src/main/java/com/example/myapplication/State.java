@@ -7,6 +7,7 @@ class State implements Serializable {
     int mistake;
     String time;
     int countCurrect;
+    int points;
 
     State(int mistake, String time, int countCurrect, int id ){
         this.countCurrect=countCurrect;
@@ -16,7 +17,13 @@ class State implements Serializable {
 
     }
 
+    public int getPoints() {
+        return points;
+    }
 
+    public void setPoints(int points) {
+        this.points = points;
+    }
 
     public int getMistake() {
         return mistake;

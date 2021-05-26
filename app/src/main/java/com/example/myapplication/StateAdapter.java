@@ -29,13 +29,14 @@ public class StateAdapter extends ArrayAdapter<State> {
 
         TextView id = (TextView) view.findViewById(R.id.title_id);
         TextView Setid = (TextView) view.findViewById(R.id.Set_id);
-
         TextView time = (TextView) view.findViewById(R.id.title_time);
         TextView SetTime = (TextView) view.findViewById(R.id.Set_time);
         TextView mistake = (TextView) view.findViewById(R.id.title_mistake);
         TextView mistakeCount = (TextView) view.findViewById(R.id.Set_mistakeCount);
         TextView countCorrect = (TextView) view.findViewById(R.id.title_countCorrect);
         TextView Set_CountCorrect = (TextView) view.findViewById(R.id.Set_countCorrect);
+        TextView points = (TextView) view.findViewById(R.id.title_point);
+        TextView Setpoints = (TextView) view.findViewById(R.id.Set_points);
 
         State state = states.get(position);
 
@@ -43,6 +44,7 @@ public class StateAdapter extends ArrayAdapter<State> {
         SetTime.setText( state.getTime());
         mistakeCount.setText(String.valueOf( state.getMistake()));
         Set_CountCorrect.setText( String.valueOf( state.getCountCurrect()));
+        Setpoints.setText(String.valueOf(state.getPoints()));
 
         return view;
     }

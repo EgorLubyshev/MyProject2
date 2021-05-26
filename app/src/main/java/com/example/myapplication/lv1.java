@@ -100,7 +100,8 @@ public class lv1 extends AppCompatActivity {
         variant3.setTextSize(width/k);
         variant4.setTextSize(width/k);
 
-
+        Intent intent = getIntent();
+        t=intent.getExtras().getBoolean("IsComplited");
 
         TasksLoader tasksLoader = new TasksLoader();
         tasksLoader.setOnPostExecute(new TasksLoader.OnPostExecute() {

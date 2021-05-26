@@ -38,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
     int mistake=0, id=999;
     String time;
     int countCurrect=0;
-
+    int points;
+    boolean[] booleans = {true, true, true, true, true, true, true, true, true};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,6 +119,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), lv1.class);
+                intent.putExtra("IsComplited", booleans[0]);
+
                 startActivityForResult(intent, 1);
             }
         });
@@ -208,9 +211,14 @@ public class MainActivity extends AppCompatActivity {
         }
         mistake +=  data.getExtras().getInt("mistakes");
         count.setText(String.valueOf(mistake));
+        points= data.getExtras().getInt("points");
         switch (id){
             case 0 :
                 Intent intent = new Intent(getApplicationContext(), lv2.class);
+                booleans[id]=false;
+                if (booleans[0]) {
+                    intent.putExtra("IsComplited", booleans[0]);
+                }
                 startActivityForResult(intent, 1);
                 return;
             case 1 :
@@ -240,6 +248,8 @@ public class MainActivity extends AppCompatActivity {
             case 7 :
                 intent = new Intent(getApplicationContext(), lv9.class);
                 startActivityForResult(intent, 1);
+                return;
+            case 8 :
                 return;
             default:
 
