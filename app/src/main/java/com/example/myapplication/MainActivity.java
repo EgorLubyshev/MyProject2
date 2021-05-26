@@ -129,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), lv2.class);
+                intent.putExtra("IsComplited", booleans[1]);
                 startActivityForResult(intent, 1);
             }
         });
@@ -137,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), lv3.class);
+                intent.putExtra("IsComplited", booleans[2]);
                 startActivityForResult(intent, 1);
             }
         });
@@ -145,6 +147,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), lv4.class);
+                intent.putExtra("IsComplited", booleans[3]);
                 startActivityForResult(intent, 1);
             }
         });
@@ -153,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), lv5.class);
+                intent.putExtra("IsComplited", booleans[4]);
                 startActivityForResult(intent, 1);
             }
         });
@@ -161,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), lv6.class);
+                intent.putExtra("IsComplited", booleans[5]);
                 startActivityForResult(intent, 1);
             }
         });
@@ -169,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), lv7.class);
+                intent.putExtra("IsComplited", booleans[6]);
                 startActivityForResult(intent, 1);
             }
         });
@@ -177,7 +183,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), lv8.class);
+                intent.putExtra("IsComplited", booleans[7]);
                 startActivityForResult(intent, 1);
+
             }
         });
 
@@ -185,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), lv9.class);
+                intent.putExtra("IsComplited", booleans[8]);
                 startActivityForResult(intent, 1);
             }
         });
@@ -216,48 +225,73 @@ public class MainActivity extends AppCompatActivity {
             case 0 :
                 Intent intent = new Intent(getApplicationContext(), lv2.class);
                 booleans[id]=false;
-                if (booleans[0]) {
-                    intent.putExtra("IsComplited", booleans[0]);
+                if (booleans[id+1]) {
+                    intent.putExtra("IsComplited", booleans[id+1]);
                 }
                 startActivityForResult(intent, 1);
                 return;
             case 1 :
                 intent = new Intent(getApplicationContext(), lv3.class);
+                booleans[id]=false;
+                if (booleans[id+1]) {
+                    intent.putExtra("IsComplited", booleans[id+1]);
+                }
                 startActivityForResult(intent, 1);
                 return;
             case 2 :
                 intent = new Intent(getApplicationContext(), lv4.class);
+                booleans[id]=false;
+                if (booleans[id+1]) {
+                    intent.putExtra("IsComplited", booleans[id+1]);
+                }
                 startActivityForResult(intent, 1);
                 return;
             case 3 :
                 intent = new Intent(getApplicationContext(), lv5.class);
+                booleans[id]=false;
+                if (booleans[id+1]) {
+                    intent.putExtra("IsComplited", booleans[id+1]);
+                }
                 startActivityForResult(intent, 1);
                 return;
             case 4 :
                 intent = new Intent(getApplicationContext(), lv6.class);
+                booleans[id]=false;
+                if (booleans[id+1]) {
+                    intent.putExtra("IsComplited", booleans[id+1]);
+                }
                 startActivityForResult(intent, 1);
                 return;
             case 5 :
                 intent = new Intent(getApplicationContext(), lv7.class);
+                booleans[id]=false;
+                if (booleans[id+1]) {
+                    intent.putExtra("IsComplited", booleans[id+1]);
+                }
                 startActivityForResult(intent, 1);
                 return;
             case 6 :
                 intent = new Intent(getApplicationContext(), lv8.class);
+                booleans[id]=false;
+                if (booleans[id+1]) {
+                    intent.putExtra("IsComplited", booleans[id+1]);
+                }
                 startActivityForResult(intent, 1);
                 return;
             case 7 :
                 intent = new Intent(getApplicationContext(), lv9.class);
+                booleans[id]=false;
+                if (booleans[id+1]) {
+                    intent.putExtra("IsComplited", booleans[id+1]);
+                }
                 startActivityForResult(intent, 1);
                 return;
             case 8 :
+                booleans[id]=false;
                 return;
             default:
 
         }
-//        if (countCurrect==9){
-//            chronometer.stop();
-//
-//        }
     }
 
     @Override

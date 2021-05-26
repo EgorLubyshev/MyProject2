@@ -38,6 +38,7 @@ public class lv2 extends AppCompatActivity {
     int mistake=0;
     ArrayList<Task> tasks = new ArrayList<>();
     ArrayList<String> arrOriginal = new ArrayList<>();
+    boolean t=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,6 +98,9 @@ public class lv2 extends AppCompatActivity {
         variant2.setTextSize(width/k);
         variant3.setTextSize(width/k);
         variant4.setTextSize(width/k);
+
+        Intent intent = getIntent();
+        t=intent.getExtras().getBoolean("IsComplited");
 
 
         TasksLoader tasksLoader = new TasksLoader();
@@ -232,7 +236,12 @@ public class lv2 extends AppCompatActivity {
                 answer4.getText().equals(arrOriginal.get(3))) {
             Toast.makeText(this, "все верно!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplicationContext(), lv2.class);
-            intent.putExtra("IsTrue", true);
+            if(t){
+                intent.putExtra("IsTrue", true);
+                t=false;
+            }else {
+                intent.putExtra("IsTrue", false);
+            }
             intent.putExtra("mistakes", mistake);
             intent.putExtra("id", 1);
             setResult(RESULT_OK , intent);
