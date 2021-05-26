@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     int mistake=0, id=999;
     String time;
     int countCurrect=0;
-    int points;
+    int points=0;
     boolean[] booleans = {true, true, true, true, true, true, true, true, true};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity {
         }
         mistake +=  data.getExtras().getInt("mistakes");
         count.setText(String.valueOf(mistake));
-        points= data.getExtras().getInt("points");
+        points += data.getExtras().getInt("points");
         switch (id){
             case 0 :
                 Intent intent = new Intent(getApplicationContext(), lv2.class);
@@ -298,6 +298,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         LocalDB localDB = new LocalDB(this);
-        localDB.insert(chronometer.getText().toString(), countCurrect, mistake);
+        localDB.insert(chronometer.getText().toString(), countCurrect, mistake, points);
     }
 }

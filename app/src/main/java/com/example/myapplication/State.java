@@ -9,11 +9,12 @@ class State implements Serializable {
     int countCurrect;
     int points;
 
-    State(int mistake, String time, int countCurrect, int id ){
+    State(int mistake, String time, int countCurrect, int id, int points ){
         this.countCurrect=countCurrect;
         this.mistake=mistake;
         this.time=time;
         this.id=id;
+        this.points=points;
 
     }
 

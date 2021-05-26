@@ -18,6 +18,7 @@ public class LocalDB {
     private static final String COLUMN_MISTAKE = "mistake";
     private static final String COLUMN_TIME = "time";
     private static final String COLUMN_COUNTCURRECT = "countCurrect";
+    private static final String COLUMN_POINTS = "points";
 
     private SQLiteDatabase mDataBase;
 
@@ -26,11 +27,12 @@ public class LocalDB {
         mDataBase = mOpenHelper.getWritableDatabase();
     }
 
-    public long insert(String time, int countcorrect ,int mistake) {
+    public long insert(String time, int countcorrect ,int mistake, int points) {
         ContentValues cv=new ContentValues();
         cv.put(COLUMN_MISTAKE, mistake);
         cv.put(COLUMN_TIME, time);
         cv.put(COLUMN_COUNTCURRECT, countcorrect);
+        cv.put(COLUMN_POINTS, points);
         return mDataBase.insert(TABLE_NAME, null, cv);
     }
 
@@ -45,7 +47,8 @@ public class LocalDB {
                 String time = cursor.getString(cursor.getColumnIndex(COLUMN_TIME));
                 int count = cursor.getInt(cursor.getColumnIndex(COLUMN_COUNTCURRECT));
                 int mistake = cursor.getInt(cursor.getColumnIndex(COLUMN_MISTAKE));
-                arr.add(new State(mistake, time, count, id));
+                int points = cursor.getInt(cursor.getColumnIndex(COLUMN_POINTS));
+                arr.add(new State(mistake, time, count, id, points));
             } while (cursor.moveToNext());
         }
         return arr;
@@ -62,7 +65,8 @@ public class LocalDB {
                     COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COLUMN_MISTAKE + " INT, " +
                     COLUMN_TIME + " TEXT, " +
-                    COLUMN_COUNTCURRECT + " INT);";
+                    COLUMN_COUNTCURRECT + " INT, "+
+                    COLUMN_POINTS+ " INT);";
             db.execSQL(query);
         }
 
