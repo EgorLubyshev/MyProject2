@@ -81,7 +81,7 @@ public class lv7 extends AppCompatActivity {
         answer1.setHeight(height/12);
         answer2.setHeight(height/12);
         answer3.setHeight(height/12);
-        answer4.setHeight(height/12);
+        answer4.setHeight(height/(12-1));
         answer1.setTextSize(width/k);
         answer2.setTextSize(width/k);
         answer3.setTextSize(width/k);

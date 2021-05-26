@@ -31,7 +31,7 @@
             android:layout_above="@+id/lv1"
             android:textColor="@color/white"
             android:layout_marginBottom="33dp"
-            android:text="Выбор уровня :" />
+            android:text="Выбор уровня" />
 
         <Button
             android:id="@+id/lv1"
@@ -167,6 +167,28 @@
             android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/mistakeCount"
             android:text="0"
+            android:textColor="@color/white"
+            android:layout_marginBottom="34dp"
+            />
+
+
+        <TextView
+            android:id="@+id/points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="34dp"
+            android:textColor="@color/white"
+            android:layout_toLeftOf="@+id/Set_points"
+            android:text="Баллы : " />
+
+        <TextView
+            android:id="@+id/Set_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="0"
+            android:layout_alignParentEnd="true"
             android:textColor="@color/white"
             android:layout_marginBottom="34dp"
             />

@@ -31,7 +31,7 @@ import retrofit2.http.Query;
 
 public class MainActivity extends AppCompatActivity {
     Button lv1,lv2,lv3,lv4,lv5,lv6,lv7,lv8,lv9;
-    TextView select, mis, count;
+    TextView select, mis, count, title_points, setPoints;
     Chronometer chronometer;
     Display display;
     Point size;
@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         mis=findViewById(R.id.mistakeCount);
         count=findViewById(R.id.Count);
         chronometer=findViewById(R.id.chronometer1);
+        title_points=findViewById(R.id.points);
+        setPoints=findViewById(R.id.Set_points);
 
 
 
@@ -69,9 +71,11 @@ public class MainActivity extends AppCompatActivity {
         int width = size.x;
         int height = size.y;
 
-        chronometer.setTextSize(width/80);
+        chronometer.setTextSize(width/70);
         chronometer.setWidth(width/6);
         chronometer.setHeight(height/16);
+        title_points.setTextSize(width/60);
+        setPoints.setTextSize(width/60);
 
         select.setTextSize(width/40);
         mis.setTextSize(width/60);
@@ -115,9 +119,10 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent1 = getIntent();
         count.setText(String.valueOf(mistake));
-        chronometer.start();
+        setPoints.setText(String.valueOf(points));
 
 
+        chronometer.stop();
         lv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("IsComplited", booleans[0]);
 
                 startActivityForResult(intent, 1);
+                chronometer.start();
             }
         });
 
@@ -134,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), lv2.class);
                 intent.putExtra("IsComplited", booleans[1]);
                 startActivityForResult(intent, 1);
+                chronometer.start();
             }
         });
 
@@ -143,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), lv3.class);
                 intent.putExtra("IsComplited", booleans[2]);
                 startActivityForResult(intent, 1);
+                chronometer.start();
             }
         });
 
@@ -152,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), lv4.class);
                 intent.putExtra("IsComplited", booleans[3]);
                 startActivityForResult(intent, 1);
+                chronometer.start();
             }
         });
 
@@ -161,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), lv5.class);
                 intent.putExtra("IsComplited", booleans[4]);
                 startActivityForResult(intent, 1);
+                chronometer.start();
             }
         });
 
@@ -170,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), lv6.class);
                 intent.putExtra("IsComplited", booleans[5]);
                 startActivityForResult(intent, 1);
+                chronometer.start();
             }
         });
 
@@ -179,6 +190,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), lv7.class);
                 intent.putExtra("IsComplited", booleans[6]);
                 startActivityForResult(intent, 1);
+                chronometer.start();
             }
         });
 
@@ -188,6 +200,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), lv8.class);
                 intent.putExtra("IsComplited", booleans[7]);
                 startActivityForResult(intent, 1);
+                chronometer.start();
 
             }
         });
@@ -198,6 +211,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), lv9.class);
                 intent.putExtra("IsComplited", booleans[8]);
                 startActivityForResult(intent, 1);
+                chronometer.start();
             }
         });
     }
@@ -223,6 +237,7 @@ public class MainActivity extends AppCompatActivity {
         }
         mistake +=  data.getExtras().getInt("mistakes");
         count.setText(String.valueOf(mistake));
+        setPoints.setText(String.valueOf(points));
         points += data.getExtras().getInt("points");
         switch (id){
             case 0 :
